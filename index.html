@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>اقرأ وتعلّم | Enterprise RC2 Certificate Edition</title>
+<title>اقرأ وتعلّم | Enterprise V1.3 Final Candidate</title>
 <meta name="theme-color" content="#0b6b78" />
 <link rel="manifest" href="manifest.json">
 <style>
@@ -42,16 +42,16 @@
 .furqan-cert{position:relative;width:100%;aspect-ratio:1.414/1;background:#f8faf9 url('certificate-template.jpg') center/cover no-repeat;border-radius:12px;overflow:hidden;box-shadow:0 18px 45px rgba(67,20,28,.18);font-family:Tahoma,"Segoe UI",Arial,sans-serif;color:#741020}
 .furqan-cert .cert-overlay{position:absolute;inset:0}
 .furqan-cert .dyn{position:absolute;font-weight:900;color:#741020;text-align:center;line-height:1.35;text-shadow:0 1px 0 rgba(255,255,255,.8)}
-.furqan-cert .center-name{top:45.7%;right:13.5%;width:23%;font-size:clamp(13px,1.55vw,25px)}
-.furqan-cert .child-name{top:45.7%;left:33%;width:34%;font-size:clamp(13px,1.55vw,25px)}
-.furqan-cert .term-name{top:53.1%;left:37.5%;width:25%;font-size:clamp(12px,1.35vw,22px)}
-.furqan-cert .year-name{top:53.1%;left:17%;width:17%;font-size:clamp(12px,1.35vw,22px)}
-.furqan-cert .grade-name{top:60.6%;left:36%;width:28%;font-size:clamp(12px,1.35vw,22px)}
+.furqan-cert .center-name{top:45.7%;right:18.2%;width:22%;font-size:clamp(13px,1.48vw,24px)}
+.furqan-cert .child-name{top:45.7%;left:27.5%;width:32%;font-size:clamp(13px,1.48vw,24px)}
+.furqan-cert .term-name{top:53.1%;left:39.2%;width:16%;font-size:clamp(12px,1.35vw,22px)}
+.furqan-cert .year-name{top:53.1%;left:21.3%;width:8%;font-size:clamp(12px,1.35vw,22px)}
+.furqan-cert .grade-name{top:60.6%;left:32.7%;width:24%;font-size:clamp(12px,1.35vw,22px)}
 .furqan-cert .cert-number{top:7.1%;left:22.7%;width:12%;font-size:clamp(8px,.9vw,14px);text-align:right}
 .furqan-cert .cert-date{top:10.4%;left:22.7%;width:12%;font-size:clamp(8px,.9vw,14px);text-align:right}
-.furqan-cert .qr-live{position:absolute;right:5.8%;bottom:5.4%;width:8.2%;aspect-ratio:1;background:#fff;padding:4px}
+.furqan-cert .qr-live{position:absolute;right:5.65%;bottom:5.15%;width:8.5%;aspect-ratio:1;background:#fff;padding:3px;z-index:3}
 .furqan-cert .qr-live img{width:100%;height:100%;display:block;object-fit:contain}
-.furqan-cert .cover-qr{position:absolute;right:5.1%;bottom:4.5%;width:10%;height:14%;background:#f8faf9}
+.furqan-cert .cover-qr{position:absolute;right:5.0%;bottom:4.25%;width:10.2%;height:14.4%;background:#f8faf9;z-index:2}
 .cert-note{font-size:13px;color:#68757b;margin-top:8px}
 @media(max-width:700px){.furqan-cert{border-radius:8px}.certificate-shell{overflow:auto}.furqan-cert{min-width:760px}}
 @page{size:A4 landscape;margin:0}
@@ -68,7 +68,7 @@
 <body>
 <div class="app">
 <header class="top">
-  <div class="brand"><div class="logo"><img src="icon.svg" alt="أيقونة اقرأ وتعلّم" style="width:42px;height:42px"></div><div><h1>اقرأ وتعلّم</h1><p>رحلة الطفل الأولى مع القرآن</p></div></div>
+  <div class="brand"><div class="logo"><img src="icon.svg" alt="أيقونة اقرأ وتعلّم" style="width:42px;height:42px" onerror="this.src='icon-192.png'"></div><div><h1>اقرأ وتعلّم</h1><p>رحلة الطفل الأولى مع القرآن</p></div></div>
   <nav class="tabs">
     <button class="active" data-tab="child">الطفل</button><button data-tab="teacher">المعلمة</button><button data-tab="parent">ولي الأمر</button><button data-tab="supervisor">المشرفة</button><button data-tab="manager">المديرة</button>
   <button id="soundToggle" class="sound-toggle" type="button" onclick="toggleSound()" aria-label="تشغيل أو كتم الأصوات">🔊 الأصوات</button></nav>
@@ -196,9 +196,9 @@
       <p class="subtitle">تُعبّأ البيانات تلقائيًا داخل نموذج شهادة جمعية فرقان.</p>
       <div class="formGrid" style="margin-top:14px">
         <div class="field"><label>اسم الطفل/ـة أو الأسرة</label><input id="certName" value="سارة محمد"></div>
-        <div class="field"><label>اسم المركز</label><input id="certCenter" value="مركز زينب بنت العوام"></div>
-        <div class="field"><label>الفصل الدراسي</label><select id="certTerm"><option>الفصل الدراسي الأول</option><option>الفصل الدراسي الثاني</option><option>الفصل الدراسي الثالث</option><option>البرنامج الصيفي</option></select></div>
-        <div class="field"><label>العام الدراسي</label><input id="certYear" value="1448هـ"></div>
+        <div class="field"><label>اسم المركز</label><input id="certCenter" value="زينب بنت العوام"></div>
+        <div class="field"><label>الفصل الدراسي</label><select id="certTerm"><option>الأول</option><option>الثاني</option><option>الثالث</option><option>الصيفي</option></select></div>
+        <div class="field"><label>العام الدراسي</label><input id="certYear" value="48"></div>
         <div class="field"><label>التقدير</label><select id="certGrade"><option>ممتاز</option><option>جيد جدًا</option><option>جيد</option></select></div>
         <div class="field"><label>اسم المعلمة</label><input id="certTeacher" value="المعلمة نورة"></div>
         <div class="field"><label>تاريخ الإصدار</label><input id="certDate" type="date"></div>
@@ -228,13 +228,13 @@
       <div class="cert-overlay">
         <span class="dyn cert-number" id="outId">—</span>
         <span class="dyn cert-date" id="outDate">—</span>
-        <span class="dyn center-name" id="outCenter">مركز زينب بنت العوام</span>
+        <span class="dyn center-name" id="outCenter">زينب بنت العوام</span>
         <span class="dyn child-name" id="outName">سارة محمد</span>
-        <span class="dyn term-name" id="outTerm">الفصل الدراسي الأول</span>
-        <span class="dyn year-name" id="outYear">1448هـ</span>
+        <span class="dyn term-name" id="outTerm">الأول</span>
+        <span class="dyn year-name" id="outYear">48</span>
         <span class="dyn grade-name" id="outGrade">ممتاز</span>
         <div class="cover-qr" aria-hidden="true"></div>
-        <div class="qr-live"><img id="certQr" alt="رمز التحقق من الشهادة"></div>
+        <div class="qr-live"><img id="certQr" src="certificate-qr.png" alt="رمز التحقق من الشهادة"></div>
       </div>
     </div>
   </div>
@@ -450,8 +450,8 @@ function issueCertificate(){
   if(!certApproved.checked){certStatus.textContent='يرجى اعتماد إكمال المتطلبات أولًا.';certStatus.style.color='#b33';return}
   outName.textContent=certName.value.trim()||'اسم الطفل/ـة';
   outCenter.textContent=certCenter.value.trim()||'اسم المركز';
-  outTerm.textContent=certTerm.value;
-  outYear.textContent=certYear.value.trim()||'1448هـ';
+  outTerm.textContent=(certTerm.value||'الأول').replace('الفصل الدراسي ','');
+  outYear.textContent=(certYear.value.trim()||'48').replace(/[^0-9٠-٩]/g,'').slice(-2)||'48';
   outGrade.textContent=certGrade.value;
   outId.textContent=certId.value;
   outDate.textContent=formatArabicDate(certDate.value);
@@ -459,13 +459,13 @@ function issueCertificate(){
   certStatus.textContent='تم إصدار الشهادة المعتمدة، ويمكن طباعتها أو حفظها PDF.';
   certStatus.style.color='var(--green)';
   const verify=location.origin+location.pathname+'?certificate='+encodeURIComponent(certId.value);
-  certQr.src='https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=0&data='+encodeURIComponent(verify);
+  certQr.src='certificate-qr.png';certQr.dataset.verify=verify;
   localStorage.setItem('iqraCertificate',JSON.stringify({name:certName.value,center:certCenter.value,teacher:certTeacher.value,term:certTerm.value,year:certYear.value,grade:certGrade.value,date:certDate.value,id:certId.value}));
   const c=document.getElementById('issuedCount');if(c)c.textContent=Number(c.textContent)+1;
   setProgress(100,5,'مبارك! اكتملت رحلتك وأصبحت شهادتك جاهزة.');
 }
 certApproved?.addEventListener('change',()=>approvalBadge.textContent=certApproved.checked?'جاهز للإصدار':'بانتظار الاعتماد');setDefaultCertDate();
-const saved=localStorage.getItem('iqraCertificate');if(saved){try{const x=JSON.parse(saved);certName.value=x.name||'';certCenter.value=x.center||'';certTeacher.value=x.teacher||'';certTerm.value=x.term||'الفصل الدراسي الأول';certYear.value=x.year||'1448هـ';certGrade.value=x.grade||'ممتاز';certDate.value=x.date||'';certId.value=x.id||makeCertId()}catch(e){}}
+const saved=localStorage.getItem('iqraCertificate');if(saved){try{const x=JSON.parse(saved);certName.value=x.name||'';certCenter.value=x.center||'';certTeacher.value=x.teacher||'';certTerm.value=x.term||'الأول';certYear.value=x.year||'48';certGrade.value=x.grade||'ممتاز';certDate.value=x.date||'';certId.value=x.id||makeCertId()}catch(e){}}
 
 if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').then(r=>r.update()).catch(()=>{})}
 
