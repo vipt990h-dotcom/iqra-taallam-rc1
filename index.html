@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>اقرأ وتعلّم | Enterprise RC1.2 Letter Studio Fix</title>
+<meta name="theme-color" content="#0b6b78" />
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--teal:#0b6b78;--teal2:#0f8796;--mint:#e8f8f5;--gold:#d8a437;--cream:#fffaf0;--ink:#20313b;--soft:#f4fbfb;--rose:#fff1ef;--green:#4b8b63;--shadow:0 18px 45px rgba(10,74,84,.16);--r:28px}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at top right,#dff8f5 0 24%,transparent 24%),linear-gradient(135deg,#fefdf8,#eaf9fb 55%,#fff7e8);min-height:100vh}.app{max-width:1180px;margin:auto;padding:18px}.top{display:flex;gap:12px;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(255,255,255,.74);backdrop-filter:blur(16px);z-index:5;border:1px solid rgba(255,255,255,.7);border-radius:22px;padding:10px 12px;box-shadow:0 8px 30px rgba(0,0,0,.06)}.brand{display:flex;gap:10px;align-items:center}.logo{width:54px;height:54px;border-radius:18px;background:linear-gradient(145deg,var(--teal),#14a3ac);display:grid;place-items:center;color:#fff;font-size:28px;box-shadow:var(--shadow)}h1,h2,h3,p{margin:0}.brand h1{font-size:24px}.brand p{font-size:13px;color:#557}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tabs button,.btn{border:0;border-radius:16px;padding:12px 16px;background:#fff;color:var(--teal);font-weight:800;box-shadow:0 4px 14px rgba(0,0,0,.06);cursor:pointer}.tabs button.active,.btn.primary{background:linear-gradient(135deg,var(--teal),var(--teal2));color:white}.btn.gold{background:linear-gradient(135deg,#f4c95d,var(--gold));color:#4b3502}.hero{margin-top:18px;display:grid;grid-template-columns:1.08fr .92fr;gap:18px}.card{background:rgba(255,255,255,.83);border:1px solid rgba(255,255,255,.95);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:auto -60px -90px auto;width:190px;height:190px;background:radial-gradient(circle,rgba(216,164,55,.18),transparent 60%);border-radius:50%}.title{font-size:34px;line-height:1.4}.subtitle{color:#48616b;margin-top:8px}.pattern{background-image:linear-gradient(45deg,rgba(11,107,120,.08) 25%,transparent 25%),linear-gradient(-45deg,rgba(216,164,55,.08) 25%,transparent 25%);background-size:26px 26px;border-radius:24px;padding:14px;margin-top:16px}.progress{height:16px;background:#e7eeee;border-radius:999px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));width:42%;border-radius:999px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.tile{border:0;text-align:right;background:#fff;border-radius:24px;padding:18px;min-height:130px;box-shadow:0 10px 28px rgba(11,107,120,.1);cursor:pointer;transition:.2s}.tile:hover{transform:translateY(-4px) scale(1.01)}.icon{font-size:34px;display:block;margin-bottom:8px}.section{display:none;margin-top:18px}.section.active{display:block}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.list{display:grid;gap:10px}.item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;border-radius:18px;padding:12px 14px;box-shadow:0 6px 18px rgba(0,0,0,.06)}.badge{background:var(--mint);color:var(--teal);border-radius:999px;padding:6px 10px;font-weight:800}.muted{color:#64757d;font-size:14px}.ayat{font-size:22px;line-height:2;background:#fff8e7;border-radius:22px;padding:14px;border:1px solid #f3e3bb}.recordBox{display:grid;gap:12px}.meter{height:9px;background:#eee;border-radius:99px;overflow:hidden}.meter span{display:block;height:100%;background:#df4b4b;width:0%}.gameArea{min-height:250px;background:linear-gradient(180deg,#fff,#f2fbfa);border-radius:24px;padding:16px;border:2px dashed rgba(11,107,120,.18)}.letters{display:flex;gap:10px;flex-wrap:wrap}.letter{font-size:32px;font-weight:900;border:0;background:#fff;border-radius:20px;width:74px;height:74px;box-shadow:0 10px 22px rgba(0,0,0,.08);cursor:pointer}.ok{outline:4px solid #8ed39c}.bad{outline:4px solid #f7a1a1}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:#fff;border-radius:22px;padding:16px;text-align:center;box-shadow:0 8px 22px rgba(0,0,0,.06)}.stat b{font-size:26px;color:var(--teal)}.cert{background:#fff;border:8px double var(--gold);border-radius:22px;padding:24px;text-align:center;max-width:760px;margin:auto}.cert h2{font-size:42px;color:var(--teal)}.rights{margin-top:18px;text-align:center;color:#50636b;font-size:14px;line-height:1.9}.noBreak{white-space:nowrap}.modal{position:fixed;inset:0;background:rgba(2,29,36,.55);display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal.show{display:flex}.modal .card{max-width:520px;width:100%;text-align:center}
+.video-reference{margin-top:14px;background:#071f27;border-radius:22px;padding:12px;color:#fff}.video-reference video{width:100%;max-height:280px;border-radius:16px;background:#000}.video-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-top:9px}.video-chip{background:rgba(255,255,255,.14);padding:7px 11px;border-radius:999px;font-weight:800}.practice-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.practice-panel{background:#fff;border-radius:20px;padding:11px;border:1px solid #dcebea}.practice-panel h4{margin:0 0 8px;color:var(--teal)}.practice-panel canvas{display:block;width:100%;height:auto;border-radius:16px;background:#fff;touch-action:none}.letter-stage-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.stage-btn{border:0;border-radius:999px;padding:8px 12px;background:#edf7f6;color:var(--teal);font-weight:900;cursor:pointer}.stage-btn.active{background:var(--teal);color:#fff}.letter.mastered{box-shadow:0 0 0 4px #8ed39c inset,0 10px 22px rgba(0,0,0,.08)}.letter.learning{box-shadow:0 0 0 4px #f2cf6b inset,0 10px 22px rgba(0,0,0,.08)}.letter-status{margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.letter-status .badge{cursor:default}.audio-source-note{font-size:13px;color:#eef;margin-top:6px}.trace-guide-label{font-weight:900;color:var(--teal);margin-bottom:8px}@media(max-width:760px){.practice-grid{grid-template-columns:1fr}}
+@media(max-width:850px){.hero,.two{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.title{font-size:28px}.tabs{width:100%}.tabs button{flex:1}}@media(max-width:520px){.grid{grid-template-columns:1fr}.brand h1{font-size:20px}.top{align-items:flex-start;flex-direction:column}.tile{min-height:105px}}
+
+.formGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.field{display:grid;gap:6px}.field label{font-weight:800;color:var(--teal)}.field input,.field select{width:100%;border:1px solid #d8e4e6;border-radius:14px;padding:12px;font:inherit;background:#fff}.approval{display:flex;gap:8px;align-items:center;background:#fff8e7;border-radius:16px;padding:12px}.cert-meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px;font-size:13px;color:#53636a}.cert-logo{width:76px;height:76px;margin:auto}.qrbox{width:110px;height:110px;margin:14px auto 0;background:#fff;border:1px solid #ddd;border-radius:12px;padding:7px}.qrbox img{width:100%;height:100%;object-fit:contain}.achievements{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:16px 0}.achievement{background:var(--mint);border-radius:999px;padding:8px 12px;font-weight:800;color:var(--teal)}
+@media(max-width:650px){.formGrid{grid-template-columns:1fr}}
+@media print{body{background:#fff}.top,.rights,.no-print,.tabs{display:none!important}.app{max-width:none;padding:0}.section{display:none!important}#certificate{display:block!important;margin:0}.cert{border-radius:0;box-shadow:none;max-width:none;min-height:95vh;display:flex;flex-direction:column;justify-content:center}.cert .btn,.certEditor{display:none!important}}
+
+/* Enterprise V1.1: المرشد النجمي وشريط التقدم المرئي */
+.sound-toggle{display:flex;align-items:center;gap:7px;border:0;border-radius:14px;padding:10px 12px;background:#fff;color:var(--teal);font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.journey-wrap{margin-top:16px;background:linear-gradient(135deg,#fffdf7,#f2fbfa);border:1px solid rgba(216,164,55,.28);border-radius:24px;padding:16px}
+.journey-head{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.progress-value{font-size:22px;font-weight:900;color:var(--teal)}
+.journey-line{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:18px;padding-top:4px}.journey-line:before{content:"";position:absolute;right:7%;left:7%;top:24px;height:5px;border-radius:99px;background:#dfe9e9}.journey-fill{position:absolute;right:7%;top:24px;height:5px;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--green));width:0;transition:width .7s ease}
+.station{position:relative;z-index:1;text-align:center;color:#849297;font-size:12px;font-weight:800}.station-dot{width:44px;height:44px;border-radius:50%;margin:0 auto 7px;background:#eef3f3;border:4px solid #fff;box-shadow:0 5px 15px rgba(0,0,0,.08);display:grid;place-items:center;font-size:19px;transition:.3s}.station.done,.station.current{color:var(--teal)}.station.done .station-dot{background:linear-gradient(145deg,#f6cc68,var(--gold));color:#fff}.station.current .station-dot{background:linear-gradient(145deg,var(--teal2),var(--teal));color:#fff;transform:scale(1.08);box-shadow:0 0 0 7px rgba(11,107,120,.11)}
+.star-guide{position:fixed;left:22px;bottom:22px;z-index:18;display:flex;align-items:flex-end;gap:10px;pointer-events:none}.guide-star{width:66px;height:66px;display:grid;place-items:center;font-size:53px;color:#e2ad35;filter:drop-shadow(0 8px 12px rgba(132,91,6,.22));animation:starGlow 2.8s ease-in-out infinite}.guide-bubble{max-width:290px;background:#fff;border:1px solid rgba(216,164,55,.35);border-radius:22px 22px 7px 22px;padding:12px 15px;box-shadow:var(--shadow);font-weight:800;color:#43565e;opacity:0;transform:translateY(8px);transition:.28s}.star-guide.show .guide-bubble{opacity:1;transform:translateY(0)}
+.spark{position:fixed;z-index:30;pointer-events:none;color:#e2ad35;font-size:20px;animation:sparkUp 1.15s ease-out forwards}@keyframes starGlow{0%,100%{transform:scale(1);filter:drop-shadow(0 8px 12px rgba(132,91,6,.18))}50%{transform:scale(1.08);filter:drop-shadow(0 0 15px rgba(226,173,53,.55))}}@keyframes sparkUp{0%{opacity:0;transform:translate(0,8px) scale(.5)}25%{opacity:1}100%{opacity:0;transform:translate(var(--dx),-90px) scale(1.2)}}
+.celebrate-card{border:1px solid rgba(216,164,55,.35);background:linear-gradient(135deg,#fffdf5,#effbf8)}
+@media(max-width:700px){.journey-line{grid-template-columns:repeat(3,1fr);row-gap:18px}.journey-line:before,.journey-fill{display:none}.star-guide{left:10px;bottom:10px}.guide-star{width:52px;height:52px;font-size:43px}.guide-bubble{max-width:230px;font-size:13px}}
+
+/* Enterprise RC1.2 – اليوم الثاني: الكتابة على الحرف والألعاب التفاعلية */
+.letter-learning-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;margin-top:16px}.letter.active{background:linear-gradient(145deg,var(--teal2),var(--teal));color:#fff;transform:translateY(-2px)}.trace-card{background:linear-gradient(145deg,#fffdf6,#eefafa);border-radius:24px;padding:16px;border:1px solid rgba(11,107,120,.12)}.trace-head,.trace-actions,.game-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.selected-letter-name{font-size:32px;font-weight:900;color:var(--teal)}.trace-stage{margin-top:12px;border-radius:22px;overflow:hidden;background:#fff;border:2px dashed #c9dede;touch-action:none}.trace-stage canvas{display:block;width:100%;height:auto;touch-action:none}.trace-actions{margin-top:12px}.trace-msg,.game-message{font-weight:900;margin-top:12px;min-height:28px}.interactive-game{height:430px;position:relative;overflow:hidden;border-radius:26px;margin-top:14px;background:linear-gradient(#dff8ff 0 66%,#f7efc9 66%);border:2px solid rgba(11,107,120,.16)}.game-instruction{position:absolute;top:14px;right:14px;left:14px;z-index:3;text-align:center;background:rgba(255,255,255,.92);border-radius:18px;padding:10px;font-weight:900;color:var(--teal)}.falling-letter{position:absolute;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;font-size:36px;font-weight:900;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.15);border:4px solid #f1c75b;cursor:pointer;user-select:none;animation:fallLetter linear forwards}.falling-letter.correct-pop{animation:none;transform:scale(1.25);opacity:0;transition:.35s}.game-ground{position:absolute;right:0;left:0;bottom:0;height:34%;background:repeating-linear-gradient(45deg,rgba(75,139,99,.12) 0 12px,rgba(75,139,99,.2) 12px 24px)}@keyframes fallLetter{from{top:-90px;transform:rotate(0)}to{top:390px;transform:rotate(360deg)}}.mini-game-card{margin-top:18px;padding:16px;border-radius:22px;background:#fff8e7}.match-game{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.drag-card,.drop-card{min-height:78px;border-radius:18px;padding:14px;display:grid;place-items:center;font-weight:900}.drag-card{background:#fff;font-size:34px;box-shadow:0 8px 18px rgba(0,0,0,.08);cursor:grab}.drop-card{border:3px dashed #cbb46f;background:#fffdf7;font-size:19px}.drop-card.matched{background:#e8f8f5;border-style:solid;color:var(--green)}
+@media(max-width:800px){.letter-learning-layout{grid-template-columns:1fr}.interactive-game{height:390px}.match-game{grid-template-columns:1fr}}
+
+.restart-btn{border:1px solid rgba(201,151,43,.55);background:linear-gradient(135deg,#fffdf6,#f7ecd1);font-weight:800}
+.restart-symbol{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 10px;background:rgba(201,151,43,.14);font-size:34px;color:var(--gold);font-weight:900}
+#restartModal.show{display:flex}
+
+/* Enterprise RC1.2 Day 3: Game Studio */
+.game-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.game-tabs button{border:0;border-radius:999px;padding:10px 14px;background:#edf7f6;color:var(--teal);font-weight:900;cursor:pointer}.game-tabs button.active{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff}.game-panel{display:none}.game-panel.active{display:block}.balloon-field{position:relative;height:420px;overflow:hidden;border-radius:26px;background:linear-gradient(#dff8ff 0 72%,#eef7d5 72%);border:2px solid rgba(11,107,120,.16)}.balloon{position:absolute;bottom:-110px;width:76px;height:92px;border-radius:50% 50% 48% 48%;display:grid;place-items:center;font-size:34px;font-weight:900;background:linear-gradient(145deg,#fff5c9,#f1bd45);box-shadow:inset -8px -10px 0 rgba(255,255,255,.22),0 10px 22px rgba(0,0,0,.16);border:3px solid rgba(216,164,55,.65);cursor:pointer;animation:floatBalloon linear forwards}.balloon:after{content:"";position:absolute;bottom:-26px;width:2px;height:28px;background:#8d7a51}.balloon.pop{animation:none;transform:scale(1.35);opacity:0;transition:.3s}@keyframes floatBalloon{from{bottom:-110px;transform:translateX(0)}to{bottom:430px;transform:translateX(18px)}}.choice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}.choice-card{border:0;border-radius:22px;min-height:90px;background:#fff;font-size:34px;font-weight:900;box-shadow:0 8px 20px rgba(0,0,0,.08);cursor:pointer}.choice-card:hover{transform:translateY(-2px)}.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.memory-card{height:90px;border:0;border-radius:18px;background:linear-gradient(145deg,var(--teal2),var(--teal));color:#fff;font-size:30px;font-weight:900;cursor:pointer;box-shadow:0 8px 18px rgba(0,0,0,.1)}.memory-card.revealed,.memory-card.matched{background:#fff;color:var(--teal);outline:3px solid #8ed39c}.word-bank,.word-slots{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}.word-letter,.word-slot{width:68px;height:68px;border-radius:18px;display:grid;place-items:center;font-size:30px;font-weight:900}.word-letter{border:0;background:#fff;box-shadow:0 8px 18px rgba(0,0,0,.08);cursor:pointer}.word-slot{border:3px dashed #c9dede;background:#f9ffff}.game-result{margin-top:12px;font-weight:900;min-height:28px}.game-progress-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.game-progress-card{background:#fff;border-radius:18px;padding:12px;text-align:center}.game-progress-card b{display:block;color:var(--teal);font-size:20px}@media(max-width:700px){.choice-grid,.memory-grid,.game-progress-row{grid-template-columns:repeat(2,1fr)}.balloon-field{height:360px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand"><div class="logo"><img src="icon.svg" alt="أيقونة اقرأ وتعلّم" style="width:42px;height:42px"></div><div><h1>اقرأ وتعلّم</h1><p>رحلة الطفل الأولى مع القرآن</p></div></div>
+  <nav class="tabs">
+    <button class="active" data-tab="child">الطفل</button><button data-tab="teacher">المعلمة</button><button data-tab="parent">ولي الأمر</button><button data-tab="supervisor">المشرفة</button><button data-tab="manager">المديرة</button>
+  <button id="soundToggle" class="sound-toggle" type="button" onclick="toggleSound()" aria-label="تشغيل أو كتم الأصوات">🔊 الأصوات</button></nav>
+</header>
+
+<section id="child" class="section active">
+  <div class="hero">
+    <div class="card">
+      <h2 class="title">أهلًا بك في رحلة اقرأ وتعلّم</h2>
+      <p class="subtitle">منصة تعليمية تفاعلية تجمع بين سورة العلق بصوت الشيخ محمود خليل الحصري، والحروف، والتسميع الصوتي، والألعاب، والجوائز.</p>
+      <div class="journey-wrap">
+        <div class="journey-head"><div><b>رحلتي في اقرأ وتعلّم</b><p class="muted">يضيء المسار كلما أنجزت محطة جديدة</p></div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="progress-value"><span id="progressPercent">42</span>%</span><button class="btn restart-btn" id="restartJourneyBtn" onclick="openRestartModal()">↻ بدء رحلة جديدة</button></div></div>
+        <div class="progress" style="margin-top:12px"><div id="mainBar" class="bar"></div></div>
+        <div class="journey-line" id="journeyLine"><div class="journey-fill" id="journeyFill"></div>
+          <div class="station" data-step="0"><div class="station-dot">✦</div><span>البداية</span></div>
+          <div class="station" data-step="1"><div class="station-dot">أ</div><span>الحروف</span></div>
+          <div class="station" data-step="2"><div class="station-dot">📖</div><span>سورة العلق</span></div>
+          <div class="station" data-step="3"><div class="station-dot">🎙️</div><span>التسميع</span></div>
+          <div class="station" data-step="4"><div class="station-dot">◆</div><span>الأوسمة</span></div>
+          <div class="station" data-step="5"><div class="station-dot">🎓</div><span>الشهادة</span></div>
+        </div>
+        <p class="muted" style="margin-top:12px">النجوم: <b id="stars">8</b> ⭐ | الجوائز: <b id="gifts">2</b> 🏆</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px"><button class="btn primary" onclick="startJourney()">ابدأ الرحلة ✨</button><button class="btn" onclick="openRestartModal()">بدء من جديد</button></div>
+    </div>
+    <div class="card">
+      <h3>مهام اليوم</h3><div class="list" style="margin-top:12px">
+        <div class="item"><span>📖 استمع للآيات 1–2</span><span class="badge">اليوم 1</span></div>
+        <div class="item"><span>🎙️ سجّل قراءتك</span><span class="badge">بانتظارك</span></div>
+        <div class="item"><span>🔤 حرف أ / ب / ت</span><span class="badge">حروف</span></div>
+        <div class="item"><span>🎮 لعبة الحرف الصحيح</span><span class="badge">+10</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <button class="tile" onclick="showTab('quran')"><span class="icon">📖</span><b>سورة العلق</b><p class="muted">حسب التوزيع المعتمد</p></button>
+    <button class="tile" onclick="showTab('record')"><span class="icon">🎤</span><b>التسميع الصوتي</b><p class="muted">تسجيل وإرسال للمعلمة</p></button>
+    <button class="tile" onclick="showTab('letters')"><span class="icon">🔤</span><b>الحروف</b><p class="muted">صوت الحرف وكتابته</p></button>
+    <button class="tile" onclick="showTab('games')"><span class="icon">🎮</span><b>الألعاب التعليمية</b><p class="muted">مرتبطة بالحروف والآيات</p></button>
+    <button class="tile" onclick="openGift()"><span class="icon">🎁</span><b>صندوق المكافآت</b><p class="muted">افتح جائزتك</p></button>
+    <button class="tile" onclick="showTab('certificate')"><span class="icon">🎓</span><b>الشهادة</b><p class="muted">إصدار واعتماد وطباعة</p></button>
+  </div>
+</section>
+
+<section id="quran" class="section">
+  <div class="two"><div class="card"><h2>📖 سورة العلق</h2><p class="subtitle">مسار الحفظ اليومي</p><div class="ayat" style="margin-top:14px">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ ۝ خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ</div><div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" onclick="playHusary()">استمع بصوت الشيخ الحصري</button><button class="btn" onclick="pauseHusary()">إيقاف مؤقت</button><button class="btn" onclick="showTab('record')">سجّل قراءتي</button><audio id="husaryAudio" preload="none"></audio><p class="muted" id="reciterState" style="margin-top:10px">القارئ: الشيخ محمود خليل الحصري</p></div></div><div class="card"><h3>توزيع سورة العلق</h3><div class="list" id="ayahPlan"></div></div></div>
+</section>
+<section id="record" class="section"><div class="card recordBox"><h2>🎤 التسميع الصوتي</h2><p class="subtitle">يسمح المتصفح بالتسجيل بعد الضغط على زر البدء.</p><div class="item"><span>الحالة: <b id="recState">جاهز للتسجيل</b></span><span class="badge" id="timer">00:00</span></div><div class="meter"><span id="meter"></span></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" id="startRec">ابدأ التسجيل</button><button class="btn" id="stopRec" disabled>إيقاف</button><button class="btn gold" id="sendRec" disabled>إرسال للمعلمة</button></div><audio id="playback" controls style="width:100%;display:none"></audio><p class="muted">ملاحظة: التسجيل يحفظ محليًا داخل المتصفح في هذا الإصدار التجريبي.</p></div></section>
+<section id="letters" class="section">
+  <div class="card">
+    <h2>🔤 استوديو الحروف</h2>
+    <p class="subtitle">استمع إلى النطق الصحيح لكل حرف، ثم تتبّع الحرف المنقّط واكتبه بنفسك.</p>
+    <div class="letter-stage-nav" id="letterStageNav"></div>
+    <div class="letter-learning-layout">
+      <div>
+        <div class="letters" id="letterList" style="margin-top:14px"></div>
+        <div class="letter-status"><span class="badge" id="letterStateBadge">قيد التعلم</span><span class="muted" id="lettersMasteredText">0 من 28 حرفًا متقنًا</span></div>
+        <div class="video-reference">
+          <audio id="letterAudio" preload="auto" controls style="width:100%"></audio>
+          <div class="video-meta"><span class="video-chip" id="videoLetterLabel">النطق المرجعي: ألف</span><button class="btn gold" onclick="playSelectedLetterAudio()">▶ تشغيل نطق الحرف</button></div>
+          <p class="audio-source-note" id="videoSourceNote">يُشغَّل ملف صوتي مستقل وواضح لكل حرف.</p>
+        </div>
+      </div>
+      <div class="trace-card">
+        <div class="trace-head">
+          <div><span class="muted">الحرف المختار</span><div id="selectedLetterName" class="selected-letter-name">ألف</div></div>
+          <button class="btn primary" onclick="speakSelectedLetter()">🔊 استمع</button>
+        </div>
+        <div class="practice-grid">
+          <div class="practice-panel"><div class="trace-guide-label">1. تتبّع الحرف المنقّط</div><div class="trace-stage"><canvas id="traceCanvas" width="560" height="420" aria-label="لوحة تتبع الحرف"></canvas></div></div>
+          <div class="practice-panel"><div class="trace-guide-label">2. اكتب الحرف بنفسك</div><div class="trace-stage"><canvas id="freeCanvas" width="560" height="420" aria-label="لوحة كتابة الحرف"></canvas></div></div>
+        </div>
+        <div class="trace-actions">
+          <button class="btn" onclick="clearTrace()">مسح التتبع</button>
+          <button class="btn" onclick="clearFreeWriting()">مسح الكتابة الحرة</button>
+          <button class="btn gold" onclick="checkTrace()">تحقّق واعتمد الحرف</button>
+          <button class="btn" onclick="nextLetter()">الحرف التالي ←</button>
+        </div>
+        <p id="traceMsg" class="trace-msg">اختر حرفًا، ثم اكتب فوق الحرف المنقّط.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="games" class="section">
+  <div class="card">
+    <h2>🎮 استوديو الألعاب التفاعلية</h2>
+    <p class="subtitle">ألعاب متنوعة مرتبطة بنطق الحروف والنجوم وشريط التقدم.</p>
+    <div class="game-progress-row">
+      <div class="game-progress-card"><b id="gamesStars">0 ⭐</b><span class="muted">نجوم الألعاب</span></div>
+      <div class="game-progress-card"><b id="gamesCompleted">0 / 5</b><span class="muted">ألعاب مكتملة</span></div>
+      <div class="game-progress-card"><b id="bestHunt">0</b><span class="muted">أفضل صيد</span></div>
+      <div class="game-progress-card"><b id="bestBalloon">0</b><span class="muted">أفضل بالونات</span></div>
+    </div>
+    <div class="game-tabs" id="gameTabs">
+      <button class="active" onclick="showGamePanel('huntGame',this)">صيد الحروف</button>
+      <button onclick="showGamePanel('balloonGame',this)">فرقعة البالونات</button>
+      <button onclick="showGamePanel('soundGame',this)">طابق الصوت</button>
+      <button onclick="showGamePanel('memoryGame',this)">الذاكرة</button>
+      <button onclick="showGamePanel('wordGame',this)">تكوين الكلمة</button>
+    </div>
+    <div id="huntGame" class="game-panel active">
+      <div class="game-toolbar"><button class="btn primary" onclick="startLetterHunt()">▶ ابدأ صيد الحرف</button><button class="btn" onclick="repeatGameSound()">🔊 إعادة سماع الحرف</button><span class="badge">النقاط: <b id="huntScore">0</b></span><span class="badge">الوقت: <b id="huntTime">30</b></span></div>
+      <div class="interactive-game" id="interactiveGame"><div class="game-instruction" id="gamePrompt">اضغط «ابدأ صيد الحرف»</div><div id="fallingLetters" class="falling-letters"></div><div class="game-ground"></div></div><p id="gameMsg" class="game-message"></p>
+      <div class="mini-game-card"><h3>🧩 لعبة المطابقة</h3><p class="muted">اسحب بطاقة الحرف إلى اسمه الصحيح.</p><div id="matchGame" class="match-game"></div><button class="btn" onclick="newMatchGame()" style="margin-top:12px">مطابقة جديدة</button></div>
+    </div>
+    <div id="balloonGame" class="game-panel">
+      <div class="game-toolbar"><button class="btn primary" onclick="startBalloonGame()">🎈 ابدأ اللعبة</button><button class="btn" onclick="repeatBalloonSound()">🔊 اسمع الحرف</button><span class="badge">النقاط: <b id="balloonScore">0</b></span><span class="badge">الوقت: <b id="balloonTime">30</b></span></div>
+      <div id="balloonPrompt" class="pattern" style="text-align:center;font-weight:900">فرقّع البالون الذي يحمل الحرف المطلوب.</div><div id="balloonField" class="balloon-field"></div><p id="balloonMsg" class="game-result"></p>
+    </div>
+    <div id="soundGame" class="game-panel">
+      <div class="game-toolbar"><button class="btn primary" onclick="newSoundRound()">🔊 جولة جديدة</button><button class="btn" onclick="playSoundTarget()">إعادة الصوت</button></div><div id="soundPrompt" class="pattern" style="text-align:center;font-weight:900">استمع ثم اختر الحرف الصحيح.</div><div id="soundChoices" class="choice-grid"></div><p id="soundMsg" class="game-result"></p>
+    </div>
+    <div id="memoryGame" class="game-panel">
+      <div class="game-toolbar"><button class="btn primary" onclick="newMemoryGame()">🧠 لعبة جديدة</button><span class="badge">المحاولات: <b id="memoryMoves">0</b></span></div><p class="subtitle">طابق الحرف مع اسمه.</p><div id="memoryGrid" class="memory-grid"></div><p id="memoryMsg" class="game-result"></p>
+    </div>
+    <div id="wordGame" class="game-panel">
+      <div class="game-toolbar"><button class="btn primary" onclick="newWordGame()">📝 كلمة جديدة</button><button class="btn" onclick="clearWordSlots()">مسح</button></div><div id="wordHint" class="pattern" style="text-align:center;font-weight:900"></div><div id="wordSlots" class="word-slots"></div><div id="wordBank" class="word-bank"></div><p id="wordMsg" class="game-result"></p>
+    </div>
+  </div>
+</section>
+<section id="certificate" class="section">
+  <div class="two certEditor no-print">
+    <div class="card">
+      <h2>إصدار الشهادة</h2><p class="subtitle">راجعي البيانات ثم اعتمدي الإصدار.</p>
+      <div class="formGrid" style="margin-top:14px">
+        <div class="field"><label>اسم الطفل/ـة</label><input id="certName" value="سارة محمد"></div>
+        <div class="field"><label>اسم المركز</label><input id="certCenter" value="مركز زينب بنت العوام"></div>
+        <div class="field"><label>اسم المعلمة</label><input id="certTeacher" value="المعلمة نورة"></div>
+        <div class="field"><label>المستوى</label><select id="certLevel"><option>المستوى الذهبي</option><option>المستوى الفضي</option><option>المستوى البرونزي</option></select></div>
+        <div class="field"><label>تاريخ الإصدار</label><input id="certDate" type="date"></div>
+        <div class="field"><label>رقم الشهادة</label><input id="certId" readonly></div>
+      </div>
+      <label class="approval" style="margin-top:14px"><input id="certApproved" type="checkbox"> تم اعتماد إكمال متطلبات البرنامج من المعلمة</label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><button class="btn primary" onclick="issueCertificate()">إصدار الشهادة</button><button class="btn" onclick="window.print()">طباعة / حفظ PDF</button></div>
+      <p id="certStatus" class="muted" style="margin-top:10px">لن تُصدر الشهادة قبل اعتماد المعلمة.</p>
+    </div>
+    <div class="card"><h3>شروط الاستحقاق</h3><div class="list" style="margin-top:12px"><div class="item"><span>إتمام سورة العلق</span><span class="badge">مكتمل</span></div><div class="item"><span>إتقان الحروف المستهدفة</span><span class="badge">مكتمل</span></div><div class="item"><span>تسليم التسجيلات المطلوبة</span><span class="badge">مكتمل</span></div><div class="item"><span>اعتماد المعلمة</span><span class="badge" id="approvalBadge">بانتظار الاعتماد</span></div></div></div>
+  </div>
+  <div class="cert" id="certificatePaper" style="margin-top:16px">
+    <img src="icon.svg" class="cert-logo" alt="شعار اقرأ وتعلّم">
+    <p style="font-weight:800;color:#49636b">جمعية فرقان لتحفيظ القرآن بالطائف</p>
+    <h2>شهادة شكر وتقدير</h2>
+    <p style="font-size:20px;margin-top:12px">تُمنح للطفل/ـة</p>
+    <h3 id="outName" style="font-size:34px;margin:12px 0;color:#233">سارة محمد</h3>
+    <p style="font-size:18px;line-height:1.9">لإتمامه/ـا متطلبات برنامج <b>اقرأ وتعلّم</b> بنجاح، سائلين الله أن يبارك في علمه/ـا وعمله/ـا.</p>
+    <div class="achievements"><span class="achievement">حافظ سورة العلق</span><span class="achievement">نجم الحروف</span><span class="achievement">قارئ مجتهد</span></div>
+    <p id="outLevel" style="font-weight:900;color:var(--gold);font-size:20px">المستوى الذهبي</p>
+    <div class="two" style="margin-top:24px"><p>المعلمة<br><b id="outTeacher">المعلمة نورة</b></p><p>المركز<br><b id="outCenter">مركز زينب بنت العوام</b></p></div>
+    <div class="qrbox"><img id="certQr" alt="رمز التحقق من الشهادة"></div>
+    <div class="cert-meta"><span>رقم الشهادة: <b id="outId">—</b></span><span>تاريخ الإصدار: <b id="outDate">—</b></span></div>
+  </div>
+</section>
+
+<section id="teacher" class="section"><div class="card"><h2>لوحة المعلمة</h2><p class="subtitle">متابعة الأطفال والتسميع والحضور والمهارات اليومية.</p><div class="stats" style="margin-top:14px"><div class="stat"><b>18</b><p>إجمالي الأطفال</p></div><div class="stat"><b id="teacherRec">1</b><p>تسجيل جديد</p></div><div class="stat"><b>76%</b><p>متوسط الإنجاز</p></div><div class="stat"><b>15</b><p>حضور اليوم</p></div></div><div class="two" style="margin-top:16px"><div><h3>التسميعات الواردة</h3><div class="list" id="teacherList" style="margin-top:12px"></div></div><div><h3>المهام السريعة</h3><div class="list" style="margin-top:12px"><div class="item"><span>إضافة طفل جديد</span><button class="btn" onclick="alert('سيُفعّل الربط عند إضافة قاعدة البيانات')">إضافة</button></div><div class="item"><span>تسجيل الحضور</span><button class="btn" onclick="alert('تم فتح سجل الحضور التجريبي')">فتح</button></div><div class="item"><span>تقييم الحروف</span><span class="badge">14 مكتمل</span></div><div class="item"><span>إرسال ملاحظة لولي الأمر</span><button class="btn gold" onclick="alert('تم فتح نموذج الملاحظة')">إرسال</button></div></div></div></div></div></section>
+<section id="parent" class="section"><div class="card"><h2>لوحة ولي الأمر</h2><p class="subtitle">متابعة مستوى الطفل والإنجازات والتوصيات المنزلية.</p><div class="stats" style="margin-top:14px"><div class="stat"><b>81%</b><p>نسبة التقدم</p></div><div class="stat"><b>14</b><p>حرفًا متقنًا</p></div><div class="stat"><b>3</b><p>أوسمة</p></div><div class="stat"><b>5</b><p>تسجيلات معتمدة</p></div></div><div class="two" style="margin-top:16px"><div><h3>آخر الإنجازات</h3><div class="list" style="margin-top:12px"><div class="item"><span>إتقان الآيات 1–5</span><span class="badge">مكتمل</span></div><div class="item"><span>وسام نجم الحروف</span><span class="badge">جديد</span></div><div class="item"><span>آخر تسجيل صوتي</span><span class="badge">معتمد</span></div></div></div><div><h3>توصية المعلمة</h3><div class="item" style="margin-top:12px"><span>مراجعة الآيات 4–5، والتدرب على حرفي «ث» و«خ» لمدة عشر دقائق.</span></div><button class="btn gold" onclick="showTab('certificate')" style="margin-top:12px">عرض الشهادة</button></div></div></div></section>
+<section id="supervisor" class="section"><div class="card"><h2>لوحة المشرفة</h2><p class="subtitle">متابعة أداء الفصول والمعلمات ومراجعة عينات القراءة.</p><div class="stats" style="margin-top:14px"><div class="stat"><b>90%</b><p>نسبة الحضور</p></div><div class="stat"><b>71%</b><p>إتمام السورة</p></div><div class="stat"><b>84%</b><p>إتقان الحروف</p></div><div class="stat"><b>12</b><p>تسجيلات اليوم</p></div></div><div class="two" style="margin-top:16px"><div><h3>أداء الفصول</h3><div class="list" style="margin-top:12px"><div class="item"><span>روضة أ</span><span class="badge">92%</span></div><div class="item"><span>روضة ب</span><span class="badge">78%</span></div><div class="item"><span>التمهيدي</span><span class="badge">69%</span></div></div></div><div><h3>المتابعة الإشرافية</h3><div class="list" style="margin-top:12px"><div class="item"><span>قراءات بانتظار المراجعة</span><span class="badge">6</span></div><div class="item"><span>معلمات أكملن التحديث اليومي</span><span class="badge">3 من 4</span></div><div class="item"><span>فصل يحتاج دعمًا</span><span class="badge">التمهيدي</span></div><div class="item"><span>تقرير الأداء الأسبوعي</span><button class="btn" onclick="alert('سيتم إنشاء التقرير بعد ربط البيانات')">عرض</button></div></div></div></div></div></section>
+<section id="manager" class="section"><div class="card"><h2>لوحة المديرة الذهبية</h2><p class="subtitle">إحصاءات مباشرة ومؤشرات لاتخاذ القرار.</p><div class="stats" style="margin-top:14px"><div class="stat"><b>45</b><p>إجمالي الأطفال</p></div><div class="stat"><b>4</b><p>المعلمات</p></div><div class="stat"><b>128</b><p>إجمالي التسجيلات</p></div><div class="stat"><b>81%</b><p>نسبة الإنجاز العامة</p></div></div><div class="two" style="margin-top:16px"><div><h3>المؤشرات المباشرة</h3><div class="list" style="margin-top:12px"><div class="item"><span>أكثر طفل تميزًا</span><span class="badge">سارة</span></div><div class="item"><span>أكثر فصل نشاطًا</span><span class="badge">روضة أ</span></div><div class="item"><span>أكثر معلمة تفاعلًا</span><span class="badge">المعلمة نورة</span></div><div class="item"><span>شهادات مستحقة</span><span class="badge">36</span></div><div class="item"><span>شهادات تم إصدارها</span><span class="badge" id="issuedCount">12</span></div></div></div><div><h3>تنبيهات الإدارة</h3><div class="list" style="margin-top:12px"><div class="item"><span>لم يسجلوا منذ يومين</span><span class="badge">3 أطفال</span></div><div class="item"><span>تسجيلات لم تُراجع</span><span class="badge">6</span></div><div class="item"><span>متوسط رضا أولياء الأمور</span><span class="badge">88%</span></div><div class="item"><span>التقرير التنفيذي</span><button class="btn gold" onclick="alert('سيُفعّل التقرير التنفيذي بعد ربط Firebase')">عرض</button></div></div></div></div></div></section>
+
+<div class="rights"><b>المحتوى التعليمي</b><br>جمعية فرقان لتحفيظ القرآن بالطائف<br><b>فكرة وتصميم وإخراج</b><br><span class="noBreak">أ. تهاني القرشي</span><br><b>إشراف</b><br><span class="noBreak">أ. غالية الغامدي</span></div>
+</div>
+<div id="starGuide" class="star-guide" aria-live="polite"><div id="guideBubble" class="guide-bubble">أهلًا بك في رحلة اقرأ وتعلّم.</div><div class="guide-star" aria-hidden="true">★</div></div>
+<div id="restartModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="restartTitle"><div class="card celebrate-card"><div class="restart-symbol">↻</div><h2 id="restartTitle">بدء رحلة جديدة</h2><p style="margin:12px 0 18px">سيُعاد تقدم الطفل إلى البداية مع تصفير النجوم والشهادة المحفوظة.</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn primary" onclick="confirmRestartJourney()">نعم، ابدأ من جديد</button><button class="btn" onclick="closeRestartModal()">إلغاء</button></div></div></div>
+<div id="giftModal" class="modal"><div class="card celebrate-card"><h2>🎁 مبارك!</h2><p id="giftText" style="font-size:22px;margin:14px 0">حصلت على وسام القارئ المجتهد</p><button class="btn primary" onclick="closeGift()">إغلاق</button></div></div>
+<script>
+
+const PROGRESS_KEY='iqraEnterpriseProgressV11';
+let soundEnabled=localStorage.getItem('iqraSoundEnabled')!=='false';
+let progressState={percent:0,completed:[]};
+try{const savedProgress=JSON.parse(localStorage.getItem(PROGRESS_KEY)||'null');if(savedProgress)progressState={...progressState,...savedProgress}}catch(e){}
+function saveProgress(){localStorage.setItem(PROGRESS_KEY,JSON.stringify(progressState))}
+function openRestartModal(){document.getElementById('restartModal')?.classList.add('show')}
+function closeRestartModal(){document.getElementById('restartModal')?.classList.remove('show')}
+function confirmRestartJourney(){
+  progressState={percent:0,completed:[]};
+  localStorage.removeItem(PROGRESS_KEY);
+  localStorage.removeItem('iqraCertificate');
+  localStorage.removeItem('iqraLetterMastery');
+  localStorage.removeItem('iqraGameScores');
+  localStorage.removeItem(GAME_KEY); gameState={stars:0,completed:[],bestHunt:0,bestBalloon:0}; renderGameStats();
+  const st=document.getElementById('stars');if(st)st.textContent='0';
+  saveProgress();renderProgress();closeRestartModal();showTab('child');
+  showGuide('بدأت رحلة جديدة. هيا نضيء المحطة الأولى!');sparkles();
+}
+function resetJourney(){openRestartModal()}
+function startJourney(){
+  if((Number(progressState.percent)||0)>=100){openRestartModal();return}
+  showTab('quran');
+  if((Number(progressState.percent)||0)===0){setProgress(5,0,'بدأت رحلتك، بارك الله فيك!')}
+}
+function renderProgress(){
+  const pct=Math.max(0,Math.min(100,Number(progressState.percent)||0));
+  const b=document.getElementById('mainBar'),v=document.getElementById('progressPercent'),f=document.getElementById('journeyFill');
+  if(b)b.style.width=pct+'%';if(v)v.textContent=pct;if(f)f.style.width=(pct*.86)+'%';
+  document.querySelectorAll('.station').forEach((el,i)=>{el.classList.toggle('done',progressState.completed.includes(i));el.classList.toggle('current',!progressState.completed.includes(i)&&i===Math.min(5,Math.floor(pct/20)))})
+}
+function setProgress(percent,step,message){const old=progressState.percent;progressState.percent=Math.max(progressState.percent,percent);if(step!=null&&!progressState.completed.includes(step))progressState.completed.push(step);saveProgress();renderProgress();if(progressState.percent>old){showGuide(message||'أضاء نجمك أكثر!');sparkles();successSound()}}
+function toggleSound(){soundEnabled=!soundEnabled;localStorage.setItem('iqraSoundEnabled',soundEnabled);renderSoundToggle();if(soundEnabled){successSound();showGuide('تم تشغيل الأصوات التشجيعية.')}}
+function renderSoundToggle(){const b=document.getElementById('soundToggle');if(b)b.innerHTML=soundEnabled?'🔊 الأصوات':'🔇 الأصوات'}
+function tone(freq,duration=.13,delay=0){if(!soundEnabled)return;try{const C=window.AudioContext||window.webkitAudioContext;const ctx=window.__iqraAudioCtx||(window.__iqraAudioCtx=new C());const o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=freq;g.gain.setValueAtTime(.001,ctx.currentTime+delay);g.gain.exponentialRampToValueAtTime(.11,ctx.currentTime+delay+.02);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+delay+duration);o.connect(g).connect(ctx.destination);o.start(ctx.currentTime+delay);o.stop(ctx.currentTime+delay+duration+.03)}catch(e){}}
+function successSound(){tone(523,.12,0);tone(659,.12,.11);tone(784,.19,.22)}
+function gentleTrySound(){tone(392,.10,0);tone(440,.14,.12)}
+let guideTimer;
+function showGuide(text,ms=3600){const g=document.getElementById('starGuide'),b=document.getElementById('guideBubble');if(!g||!b)return;b.textContent=text;g.classList.add('show');clearTimeout(guideTimer);guideTimer=setTimeout(()=>g.classList.remove('show'),ms)}
+function sparkles(){for(let i=0;i<9;i++){const e=document.createElement('span');e.className='spark';e.textContent=i%2?'✦':'★';e.style.left=(35+Math.random()*80)+'px';e.style.bottom=(35+Math.random()*35)+'px';e.style.setProperty('--dx',(Math.random()*100-50)+'px');document.body.appendChild(e);setTimeout(()=>e.remove(),1300)}}
+function encourage(text,kind='success'){showGuide(text);if(kind==='success')successSound();else gentleTrySound()}
+renderProgress();renderSoundToggle();setTimeout(()=>showGuide('أهلًا بك في رحلة اقرأ وتعلّم. هيا نضيء أولى المحطات!'),700);
+
+const sections=[...document.querySelectorAll('.section')]; const tabBtns=[...document.querySelectorAll('.tabs button')];
+function showTab(id){
+  sections.forEach(s=>s.classList.remove('active'));
+  document.getElementById(id)?.classList.add('active');
+  tabBtns.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+  if(id==='letters'){
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      fitTraceCanvas();
+      selectLetter(selectedLetterIndex,false);
+    }));
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+tabBtns.forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+const plan=['آية 1–2','آية 3','آية 4–5','آية 6','آية 7–8','آية 9 + مراجعة','آية 10','آية 11–12','آية 13 + مراجعة','آية 14','آية 15','آية 16 + مراجعة','آية 17','آية 18','آية 19 + مراجعة'];
+document.getElementById('ayahPlan').innerHTML=plan.map((p,i)=>`<div class="item"><span>اليوم ${i+1}: ${p}</span><span class="badge">${i<3?'مفتوح':'قريبًا'}</span></div>`).join('');
+const letterData=[
+['ا','ألف'],['ب','باء'],['ت','تاء'],['ث','ثاء'],['ج','جيم'],['ح','حاء'],['خ','خاء'],['د','دال'],['ذ','ذال'],['ر','راء'],['ز','زاي'],['س','سين'],['ش','شين'],['ص','صاد'],['ض','ضاد'],['ط','طاء'],['ظ','ظاء'],['ع','عين'],['غ','غين'],['ف','فاء'],['ق','قاف'],['ك','كاف'],['ل','لام'],['م','ميم'],['ن','نون'],['هـ','هاء'],['و','واو'],['ي','ياء']];
+const letters=letterData.map(x=>x[0]);let selectedLetterIndex=0;
+const letterStages=[[0,5],[5,10],[10,15],[15,20],[20,28]];
+const letterAudioFiles=letterData.map((_,i)=>`${String(i+1).padStart(2,'0')}.mp3?v=rc1-2`);
+let currentStage=0;
+let masteredLetters=new Set(JSON.parse(localStorage.getItem('iqraMasteredLetters')||'[]'));
+function getLetterName(ch){return (letterData.find(x=>x[0]===ch)||[ch,ch])[1]}
+function speakText(txt){if(!soundEnabled)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang='ar-SA';u.rate=.62;u.pitch=1;u.volume=1;speechSynthesis.speak(u)}catch(e){}}
+function say(txt){speakText(txt)}
+function renderStageNav(){const el=document.getElementById('letterStageNav');if(!el)return;el.innerHTML=letterStages.map((s,i)=>`<button class="stage-btn ${i===currentStage?'active':''}" onclick="setLetterStage(${i})">المرحلة ${i+1}</button>`).join('')}
+function setLetterStage(i){currentStage=i;const [a,b]=letterStages[i];if(selectedLetterIndex<a||selectedLetterIndex>=b)selectedLetterIndex=a;renderStageNav();renderLetterList();selectLetter(selectedLetterIndex,false)}
+function renderLetterList(){
+  const listEl=document.getElementById('letterList'), masteredEl=document.getElementById('lettersMasteredText');
+  if(!listEl)return;
+  const [a,b]=letterStages[currentStage];
+  listEl.innerHTML=letterData.slice(a,b).map((x,j)=>{const i=a+j,state=masteredLetters.has(x[0])?'mastered':(i===selectedLetterIndex?'learning':'');return `<button class="letter ${i===selectedLetterIndex?'active':''} ${state}" onclick="selectLetter(${i})" aria-label="${x[1]}">${x[0]}</button>`}).join('');
+  if(masteredEl)masteredEl.textContent=masteredLetters.size+' من 28 حرفًا متقنًا';
+}
+function selectLetter(i,autoPlay=true){
+  selectedLetterIndex=Math.max(0,Math.min(letterData.length-1,Number(i)||0));
+  const st=letterStages.findIndex(([a,b])=>selectedLetterIndex>=a&&selectedLetterIndex<b);
+  if(st!==currentStage){currentStage=st;renderStageNav()}
+  renderLetterList();
+  const [ch,name]=letterData[selectedLetterIndex];
+  const nameEl=document.getElementById('selectedLetterName'), labelEl=document.getElementById('videoLetterLabel'), badgeEl=document.getElementById('letterStateBadge');
+  if(nameEl)nameEl.textContent=name;
+  if(labelEl)labelEl.textContent='النطق المرجعي: '+name;
+  const audioEl=document.getElementById('letterAudio');if(audioEl){audioEl.src=letterAudioFiles[selectedLetterIndex];audioEl.load()}
+  if(badgeEl)badgeEl.textContent=masteredLetters.has(ch)?'متقن':'قيد التعلم';
+  if(document.getElementById('letters')?.classList.contains('active')){
+    fitTraceCanvas();
+  }else{
+    drawTraceGuide();clearFreeWriting();
+  }
+  if(autoPlay)speakSelectedLetter();
+}
+function playSelectedLetterAudio(){
+  const audio=document.getElementById('letterAudio'), note=document.getElementById('videoSourceNote');
+  const [,name]=letterData[selectedLetterIndex];
+  if(!audio){speakText(name);return}
+  const src=letterAudioFiles[selectedLetterIndex];
+  if(audio.getAttribute('src')!==src){audio.src=src;audio.load()}
+  if(note)note.textContent='تشغيل النطق الصحيح لحرف '+name+'.';
+  audio.currentTime=0;
+  audio.play().catch((err)=>{console.error('Letter audio failed:',src,err);if(note)note.textContent='تعذر تشغيل الصوت. تأكدي من فتح المنصة من الموقع أو من الحزمة الكاملة.';});
+}
+function speakSelectedLetter(){playSelectedLetterAudio()}
+function nextLetter(){selectLetter((selectedLetterIndex+1)%letterData.length);clearTrace()}
+const traceCanvas=document.getElementById('traceCanvas'),tctx=traceCanvas.getContext('2d'),freeCanvas=document.getElementById('freeCanvas'),fctx=freeCanvas.getContext('2d');let drawing=false,tracePoints=0,freeDrawing=false,freePoints=0;
+function fitOneCanvas(canvas,ctx){
+  if(!canvas||!ctx)return;
+  const dpr=Math.max(1,window.devicePixelRatio||1);
+  const rect=canvas.getBoundingClientRect();
+  const parentWidth=canvas.parentElement?.clientWidth||0;
+  const cssWidth=Math.max(280,Math.round(rect.width||parentWidth||560));
+  const cssHeight=Math.round(cssWidth*.75);
+  canvas.style.width=cssWidth+'px';
+  canvas.style.height=cssHeight+'px';
+  canvas.width=Math.round(cssWidth*dpr);
+  canvas.height=Math.round(cssHeight*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+function fitTraceCanvas(){fitOneCanvas(traceCanvas,tctx);fitOneCanvas(freeCanvas,fctx);drawTraceGuide();clearFreeWriting()}
+function drawTraceGuide(){const w=traceCanvas.clientWidth||560,h=(traceCanvas.clientWidth||560)*.75;tctx.clearRect(0,0,w,h);tctx.save();tctx.textAlign='center';tctx.textBaseline='middle';tctx.font=`900 ${Math.min(w*.42,h*.55)}px Tahoma,Arial`;tctx.setLineDash([10,10]);tctx.lineWidth=4;tctx.strokeStyle='#aebfc0';const ch=letterData[selectedLetterIndex][0];tctx.strokeText(ch,w*.25,h*.5);tctx.strokeText(ch,w*.5,h*.5);tctx.strokeText(ch,w*.75,h*.5);tctx.fillStyle='rgba(11,107,120,.025)';tctx.fillText(ch,w*.25,h*.5);tctx.fillText(ch,w*.5,h*.5);tctx.fillText(ch,w*.75,h*.5);tctx.restore();tracePoints=0;traceMsg.textContent=''}
+function clearFreeWriting(){const w=freeCanvas.clientWidth||560,h=(freeCanvas.clientWidth||560)*.75;fctx.clearRect(0,0,w,h);fctx.save();fctx.setLineDash([5,8]);fctx.strokeStyle='#d8e4e4';fctx.lineWidth=2;fctx.beginPath();fctx.moveTo(20,h*.72);fctx.lineTo(w-20,h*.72);fctx.stroke();fctx.restore();freePoints=0}
+function pos(canvas,e){const r=canvas.getBoundingClientRect(),p=e.touches?e.touches[0]:e;return{x:p.clientX-r.left,y:p.clientY-r.top}}
+function bindDrawing(canvas,ctx,isFree){
+  if(!canvas||!ctx)return;
+  let active=false;
+  const down=e=>{e.preventDefault();active=true;canvas.setPointerCapture?.(e.pointerId);const p=pos(canvas,e);ctx.beginPath();ctx.moveTo(p.x,p.y)};
+  const move=e=>{if(!active)return;e.preventDefault();const p=pos(canvas,e);ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle=isFree?'#d8a437':'#0b6b78';ctx.lineWidth=isFree?14:16;ctx.lineTo(p.x,p.y);ctx.stroke();if(isFree)freePoints++;else tracePoints++};
+  const up=e=>{active=false;try{canvas.releasePointerCapture?.(e.pointerId)}catch(_){}};
+  canvas.addEventListener('pointerdown',down,{passive:false});
+  canvas.addEventListener('pointermove',move,{passive:false});
+  canvas.addEventListener('pointerup',up);
+  canvas.addEventListener('pointercancel',up);
+  canvas.addEventListener('pointerleave',up);
+}
+bindDrawing(traceCanvas,tctx,false);bindDrawing(freeCanvas,fctx,true);
+function clearTrace(){drawTraceGuide()}
+function checkTrace(){const ch=letterData[selectedLetterIndex][0];if(tracePoints>25&&freePoints>12){masteredLetters.add(ch);localStorage.setItem('iqraMasteredLetters',JSON.stringify([...masteredLetters]));traceMsg.textContent='أحسنت! تتبعت الحرف وكتبته بنفسك ⭐';traceMsg.style.color='var(--green)';letterStateBadge.textContent='متقن';renderLetterList();setProgress(Math.min(64,45+Math.round(masteredLetters.size/28*19)),1,'أحسنت! أتقنت حرفًا جديدًا.');successSound();sparkles()}else if(tracePoints<=25){traceMsg.textContent='تتبّع الحروف المنقّطة كاملة أولًا.';traceMsg.style.color='#a56a00';gentleTrySound()}else{traceMsg.textContent='اكتب الحرف مرة واحدة في المساحة الحرة ثم أعد التحقق.';traceMsg.style.color='#a56a00';gentleTrySound()}}
+renderStageNav();
+renderLetterList();
+setTimeout(()=>{selectLetter(0,false)},100);
+let resizeTimer;
+window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(document.getElementById('letters')?.classList.contains('active'))fitTraceCanvas()},120)});
+
+let huntTarget='ب',huntTimer=null,huntSpawn=null,huntRemaining=30,huntScoreValue=0,huntRunning=false;
+function repeatGameSound(){const i=letters.indexOf(huntTarget);if(i>=0){const old=selectedLetterIndex;selectedLetterIndex=i;playSelectedLetterAudio();selectedLetterIndex=old}else speakText(getLetterName(huntTarget))}
+function startLetterHunt(){stopLetterHunt();huntRunning=true;huntRemaining=30;huntScoreValue=0;huntScore.textContent='0';huntTime.textContent='30';fallingLetters.innerHTML='';chooseHuntTarget();huntTimer=setInterval(()=>{huntRemaining--;huntTime.textContent=huntRemaining;if(huntRemaining<=0)finishLetterHunt()},1000);huntSpawn=setInterval(spawnFallingLetter,850);for(let i=0;i<4;i++)setTimeout(spawnFallingLetter,i*180)}
+function chooseHuntTarget(){huntTarget=letters[Math.floor(Math.random()*letters.length)];gamePrompt.textContent='التقط حرف «'+huntTarget+'» — '+getLetterName(huntTarget);speakText(getLetterName(huntTarget))}
+function spawnFallingLetter(){if(!huntRunning)return;const el=document.createElement('button');const isTarget=Math.random()<.32;const ch=isTarget?huntTarget:letters[Math.floor(Math.random()*letters.length)];el.className='falling-letter';el.textContent=ch;el.style.right=(4+Math.random()*84)+'%';el.style.animationDuration=(3.2+Math.random()*2.5)+'s';el.onclick=()=>hitFallingLetter(el,ch);el.addEventListener('animationend',()=>el.remove());fallingLetters.appendChild(el)}
+function hitFallingLetter(el,ch){if(!huntRunning)return;if(ch===huntTarget){huntScoreValue+=10;huntScore.textContent=huntScoreValue;el.classList.add('correct-pop');gameMsg.textContent='أحسنت! التقطت الحرف الصحيح ⭐';successSound();sparkles();setTimeout(()=>el.remove(),350);if(huntScoreValue%30===0)chooseHuntTarget()}else{huntScoreValue=Math.max(0,huntScoreValue-2);huntScore.textContent=huntScoreValue;el.classList.add('bad');gameMsg.textContent='هذا حرف '+getLetterName(ch)+'، ابحث عن '+getLetterName(huntTarget);gentleTrySound();setTimeout(()=>el.remove(),450)}}
+function finishLetterHunt(){stopLetterHunt();gamePrompt.textContent='انتهى الوقت — نتيجتك '+huntScoreValue+' نقطة';if(huntScoreValue>=40){setProgress(68,3,'رائع! أنجزت لعبة صيد الحروف.');successSound()}else{gentleTrySound()}newMatchGame()}
+function stopLetterHunt(){huntRunning=false;clearInterval(huntTimer);clearInterval(huntSpawn)}
+let matchItems=[];
+function newMatchGame(){const pool=[...letterData].sort(()=>Math.random()-.5).slice(0,4);matchItems=pool;const left=pool.map(x=>`<div class="drag-card" draggable="true" data-char="${x[0]}">${x[0]}</div>`).join('');const right=[...pool].sort(()=>Math.random()-.5).map(x=>`<div class="drop-card" data-char="${x[0]}">${x[1]}</div>`).join('');matchGame.innerHTML=`<div class="list">${left}</div><div class="list">${right}</div>`;matchGame.querySelectorAll('.drag-card').forEach(el=>{el.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',el.dataset.char));el.addEventListener('click',()=>{matchGame.dataset.selected=el.dataset.char;matchGame.querySelectorAll('.drag-card').forEach(x=>x.classList.remove('active'));el.classList.add('active')})});matchGame.querySelectorAll('.drop-card').forEach(el=>{el.addEventListener('dragover',e=>e.preventDefault());el.addEventListener('drop',e=>{e.preventDefault();matchDrop(el,e.dataTransfer.getData('text/plain'))});el.addEventListener('click',()=>matchDrop(el,matchGame.dataset.selected||''))})}
+function matchDrop(drop,ch){if(!ch)return;if(drop.dataset.char===ch){drop.classList.add('matched');drop.textContent+=' ✓';const card=[...matchGame.querySelectorAll('.drag-card')].find(x=>x.dataset.char===ch);if(card){card.style.visibility='hidden'}successSound();if(matchGame.querySelectorAll('.drop-card.matched').length===matchItems.length){gameMsg.textContent='أحسنت! أكملت المطابقة كلها.';setProgress(72,3,'أكملت لعبة المطابقة بنجاح!')}}else{gentleTrySound();gameMsg.textContent='حاول مطابقة الحرف باسمه الصحيح.'}}
+newMatchGame();
+
+// Enterprise RC1.2 Day 3 - Game Studio
+const GAME_KEY='iqraGameStudioV13';
+let gameState={stars:0,completed:[],bestHunt:0,bestBalloon:0};
+try{gameState={...gameState,...JSON.parse(localStorage.getItem(GAME_KEY)||'{}')}}catch(e){}
+function saveGameState(){localStorage.setItem(GAME_KEY,JSON.stringify(gameState));renderGameStats()}
+function renderGameStats(){if(document.getElementById('gamesStars'))gamesStars.textContent=gameState.stars+' ⭐';if(document.getElementById('gamesCompleted'))gamesCompleted.textContent=gameState.completed.length+' / 5';if(document.getElementById('bestHunt'))bestHunt.textContent=gameState.bestHunt||0;if(document.getElementById('bestBalloon'))bestBalloon.textContent=gameState.bestBalloon||0}
+function completeGame(name,stars=2,msg='أحسنت! أكملت اللعبة بنجاح.'){if(!gameState.completed.includes(name))gameState.completed.push(name);gameState.stars+=stars;saveGameState();setProgress(Math.min(84,68+gameState.completed.length*3),3,msg);showGuide(msg);sparkles();successSound()}
+function showGamePanel(id,btn){document.querySelectorAll('.game-panel').forEach(x=>x.classList.remove('active'));document.getElementById(id)?.classList.add('active');document.querySelectorAll('#gameTabs button').forEach(x=>x.classList.remove('active'));btn?.classList.add('active')}
+const oldFinishLetterHunt=finishLetterHunt;finishLetterHunt=function(){const score=huntScoreValue;oldFinishLetterHunt();gameState.bestHunt=Math.max(gameState.bestHunt,score);if(score>=40)completeGame('hunt',3,'رائع! أتممت لعبة صيد الحروف.');else saveGameState()}
+let balloonTarget='ا',balloonRunning=false,balloonScoreValue=0,balloonRemaining=30,balloonTimer=null,balloonSpawn=null;
+function chooseBalloonTarget(){balloonTarget=letters[Math.floor(Math.random()*letters.length)];balloonPrompt.textContent='فرقّع حرف «'+balloonTarget+'» — '+getLetterName(balloonTarget);speakText(getLetterName(balloonTarget))}
+function repeatBalloonSound(){speakText(getLetterName(balloonTarget))}
+function startBalloonGame(){stopBalloonGame();balloonRunning=true;balloonScoreValue=0;balloonRemaining=30;balloonScore.textContent='0';balloonTime.textContent='30';balloonField.innerHTML='';balloonMsg.textContent='';chooseBalloonTarget();balloonTimer=setInterval(()=>{balloonRemaining--;balloonTime.textContent=balloonRemaining;if(balloonRemaining<=0)finishBalloonGame()},1000);balloonSpawn=setInterval(spawnBalloon,760);for(let i=0;i<5;i++)setTimeout(spawnBalloon,i*160)}
+function spawnBalloon(){if(!balloonRunning)return;const el=document.createElement('button');const ch=Math.random()<.34?balloonTarget:letters[Math.floor(Math.random()*letters.length)];el.className='balloon';el.textContent=ch;el.style.right=(3+Math.random()*87)+'%';el.style.animationDuration=(4+Math.random()*2.2)+'s';el.onclick=()=>hitBalloon(el,ch);el.addEventListener('animationend',()=>el.remove());balloonField.appendChild(el)}
+function hitBalloon(el,ch){if(!balloonRunning)return;if(ch===balloonTarget){balloonScoreValue+=10;balloonScore.textContent=balloonScoreValue;el.classList.add('pop');balloonMsg.textContent='أحسنت! هذا هو الحرف الصحيح.';successSound();sparkles();setTimeout(()=>el.remove(),300);if(balloonScoreValue%30===0)chooseBalloonTarget()}else{balloonScoreValue=Math.max(0,balloonScoreValue-2);balloonScore.textContent=balloonScoreValue;balloonMsg.textContent='هذا حرف '+getLetterName(ch)+'، حاول مرة أخرى.';gentleTrySound();el.classList.add('bad');setTimeout(()=>el.remove(),350)}}
+function stopBalloonGame(){balloonRunning=false;clearInterval(balloonTimer);clearInterval(balloonSpawn)}
+function finishBalloonGame(){stopBalloonGame();balloonPrompt.textContent='انتهى الوقت — نتيجتك '+balloonScoreValue+' نقطة';gameState.bestBalloon=Math.max(gameState.bestBalloon,balloonScoreValue);if(balloonScoreValue>=40)completeGame('balloon',3,'ممتاز! أتممت لعبة فرقعة البالونات.');else saveGameState()}
+let soundTarget='ا';function playSoundTarget(){speakText(getLetterName(soundTarget))}
+function newSoundRound(){const pool=[...letters].sort(()=>Math.random()-.5).slice(0,4);soundTarget=pool[Math.floor(Math.random()*pool.length)];soundChoices.innerHTML=pool.map(ch=>`<button class="choice-card" onclick="answerSoundChoice(this,'${ch}')">${ch}</button>`).join('');soundMsg.textContent='';soundPrompt.textContent='استمع ثم اختر الحرف الصحيح';setTimeout(playSoundTarget,180)}
+function answerSoundChoice(el,ch){if(ch===soundTarget){el.classList.add('ok');soundMsg.textContent='إجابة صحيحة: '+getLetterName(ch);completeGame('sound',2,'أحسنت! طابقت الصوت بالحرف الصحيح.')}else{el.classList.add('bad');soundMsg.textContent='حاول مرة أخرى، واستمع جيدًا.';gentleTrySound()}}
+let memoryFirst=null,memoryLock=false,memoryPairs=0,memoryMoveCount=0;
+function newMemoryGame(){const pool=[...letterData].sort(()=>Math.random()-.5).slice(0,4);const cards=[];pool.forEach(([ch,name],i)=>{cards.push({pair:i,text:ch,type:'char'},{pair:i,text:name,type:'name'})});cards.sort(()=>Math.random()-.5);memoryFirst=null;memoryLock=false;memoryPairs=0;memoryMoveCount=0;memoryMoves.textContent='0';memoryMsg.textContent='';memoryGrid.innerHTML=cards.map((c,i)=>`<button class="memory-card" data-pair="${c.pair}" data-text="${c.text}" onclick="flipMemory(this)">★</button>`).join('')}
+function flipMemory(card){if(memoryLock||card.classList.contains('matched')||card===memoryFirst)return;card.classList.add('revealed');card.textContent=card.dataset.text;if(!memoryFirst){memoryFirst=card;return}memoryMoveCount++;memoryMoves.textContent=memoryMoveCount;if(memoryFirst.dataset.pair===card.dataset.pair){memoryFirst.classList.add('matched');card.classList.add('matched');memoryFirst=null;memoryPairs++;successSound();if(memoryPairs===4){memoryMsg.textContent='أحسنت! أكملت لعبة الذاكرة.';completeGame('memory',3,'ذاكرتك رائعة! أتممت جميع الأزواج.')}}else{memoryLock=true;gentleTrySound();setTimeout(()=>{[memoryFirst,card].forEach(x=>{x.classList.remove('revealed');x.textContent='★'});memoryFirst=null;memoryLock=false},850)}}
+const wordRounds=[['باب','كوّن كلمة: باب'],['تاج','كوّن كلمة: تاج'],['نور','كوّن كلمة: نور'],['قلم','كوّن كلمة: قلم'],['كتاب','كوّن كلمة: كتاب']];let currentWord='',wordPicked=[];
+function newWordGame(){const r=wordRounds[Math.floor(Math.random()*wordRounds.length)];currentWord=r[0];wordPicked=[];wordHint.textContent=r[1];wordSlots.innerHTML=[...currentWord].map(()=>'<div class="word-slot"></div>').join('');const mixed=[...currentWord].sort(()=>Math.random()-.5);wordBank.innerHTML=mixed.map((ch,i)=>`<button class="word-letter" data-i="${i}" onclick="pickWordLetter(this,'${ch}')">${ch}</button>`).join('');wordMsg.textContent=''}
+function pickWordLetter(btn,ch){if(btn.disabled)return;wordPicked.push(ch);btn.disabled=true;btn.style.opacity=.35;const slots=[...wordSlots.children];slots[wordPicked.length-1].textContent=ch;if(wordPicked.length===currentWord.length){const made=wordPicked.join('');if(made===currentWord){wordMsg.textContent='أحسنت! كوّنت الكلمة صحيحة.';completeGame('word',3,'رائع! كوّنت الكلمة بنجاح.')}else{wordMsg.textContent='الترتيب غير صحيح، حاول مرة أخرى.';gentleTrySound();setTimeout(clearWordSlots,700)}}}
+function clearWordSlots(){wordPicked=[];[...wordSlots.children].forEach(x=>x.textContent='');[...wordBank.children].forEach(x=>{x.disabled=false;x.style.opacity=1});wordMsg.textContent=''}
+renderGameStats();newSoundRound();newMemoryGame();newWordGame();
+
+function openGift(){let gifts=['وسام القارئ المجتهد 🏅','نجمتان إضافيتان ⭐⭐','وسام إتقان الحروف 🔤','كأس بطل اليوم 🏆'];giftText.textContent=gifts[Math.floor(Math.random()*gifts.length)];giftModal.classList.add('show');encourage('مبارك! حصلت على مكافأة جديدة.');setProgress(74,3,'رائع! تقدمت خطوة جديدة نحو الشهادة.')} function closeGift(){giftModal.classList.remove('show')}
+let mediaRecorder,chunks=[],sec=0,int; startRec.onclick=async()=>{try{let stream=await navigator.mediaDevices.getUserMedia({audio:true}); mediaRecorder=new MediaRecorder(stream); chunks=[]; mediaRecorder.ondataavailable=e=>chunks.push(e.data); mediaRecorder.onstop=()=>{let blob=new Blob(chunks,{type:'audio/webm'}); playback.src=URL.createObjectURL(blob); playback.style.display='block'; sendRec.disabled=false; stream.getTracks().forEach(t=>t.stop())}; mediaRecorder.start(); startRec.disabled=true; stopRec.disabled=false; recState.textContent='جاري التسجيل'; sec=0; int=setInterval(()=>{sec++; timer.textContent='00:'+String(sec).padStart(2,'0'); meter.style.width=(sec%10)*10+'%'},1000)}catch(e){alert('لم يسمح المتصفح باستخدام الميكروفون')}}; stopRec.onclick=()=>{mediaRecorder?.stop();clearInterval(int);startRec.disabled=false;stopRec.disabled=true;recState.textContent='تم التسجيل'}; sendRec.onclick=()=>{recState.textContent='تم الإرسال للمعلمة';teacherRec.textContent=Number(teacherRec.textContent)+1;setProgress(76,3,'تم إرسال تسجيلك للمعلمة. أحسنت!');alert('تم إرسال التسجيل للمعلمة بنجاح')};
+teacherList.innerHTML=['سارة','عبدالله','مريم','يوسف'].map((n,i)=>`<div class="item"><span>${n}<br><small class="muted">آيات اليوم والتسجيلات</small></span><span><button class="btn" onclick="alert('تشغيل تسجيل ${n} التجريبي')">استماع</button> <button class="btn gold" onclick="alert('تم اعتماد تسميع ${n}')">اعتماد</button></span></div>`).join('');
+
+function makeCertId(){const d=new Date();return 'IQRA-'+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+'-'+Math.random().toString(36).slice(2,8).toUpperCase()}
+function setDefaultCertDate(){const el=document.getElementById('certDate');if(el&&!el.value)el.value=new Date().toISOString().slice(0,10);const id=document.getElementById('certId');if(id&&!id.value)id.value=makeCertId()}
+function issueCertificate(){setDefaultCertDate();if(!certApproved.checked){certStatus.textContent='يرجى اعتماد إكمال المتطلبات أولًا.';certStatus.style.color='#b33';return}outName.textContent=certName.value.trim()||'اسم الطفل/ـة';outCenter.textContent=certCenter.value.trim()||'اسم المركز';outTeacher.textContent=certTeacher.value.trim()||'اسم المعلمة';outLevel.textContent=certLevel.value;outId.textContent=certId.value;outDate.textContent=certDate.value;approvalBadge.textContent='تم الاعتماد';certStatus.textContent='تم إصدار الشهادة بنجاح، ويمكن طباعتها أو حفظها PDF.';certStatus.style.color='var(--green)';const verify='https://iqra-wataallam.local/verify?id='+encodeURIComponent(certId.value);certQr.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(verify);localStorage.setItem('iqraCertificate',JSON.stringify({name:certName.value,center:certCenter.value,teacher:certTeacher.value,level:certLevel.value,date:certDate.value,id:certId.value}));const c=document.getElementById('issuedCount');if(c)c.textContent=Number(c.textContent)+1;setProgress(100,5,'مبارك! اكتملت رحلتك وأصبحت شهادتك جاهزة.')}
+certApproved?.addEventListener('change',()=>approvalBadge.textContent=certApproved.checked?'جاهز للإصدار':'بانتظار الاعتماد');setDefaultCertDate();
+const saved=localStorage.getItem('iqraCertificate');if(saved){try{const x=JSON.parse(saved);certName.value=x.name||'';certCenter.value=x.center||'';certTeacher.value=x.teacher||'';certLevel.value=x.level||'المستوى الذهبي';certDate.value=x.date||'';certId.value=x.id||makeCertId()}catch(e){}}
+
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').then(r=>r.update()).catch(()=>{})}
+
+document.getElementById('restartModal')?.addEventListener('click',e=>{if(e.target.id==='restartModal')closeRestartModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRestartModal()});
+</script>
+</body></html>
