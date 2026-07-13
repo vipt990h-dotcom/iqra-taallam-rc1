@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>اقرأ وتعلّم | Enterprise RC1.2 Letter Studio Fix</title>
+<title>اقرأ وتعلّم | Enterprise RC2 Certificate Edition</title>
 <meta name="theme-color" content="#0b6b78" />
 <link rel="manifest" href="manifest.json">
 <style>
@@ -36,6 +36,33 @@
 
 /* Enterprise RC1.2 Day 3: Game Studio */
 .game-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.game-tabs button{border:0;border-radius:999px;padding:10px 14px;background:#edf7f6;color:var(--teal);font-weight:900;cursor:pointer}.game-tabs button.active{background:linear-gradient(135deg,var(--teal),var(--teal2));color:#fff}.game-panel{display:none}.game-panel.active{display:block}.balloon-field{position:relative;height:420px;overflow:hidden;border-radius:26px;background:linear-gradient(#dff8ff 0 72%,#eef7d5 72%);border:2px solid rgba(11,107,120,.16)}.balloon{position:absolute;bottom:-110px;width:76px;height:92px;border-radius:50% 50% 48% 48%;display:grid;place-items:center;font-size:34px;font-weight:900;background:linear-gradient(145deg,#fff5c9,#f1bd45);box-shadow:inset -8px -10px 0 rgba(255,255,255,.22),0 10px 22px rgba(0,0,0,.16);border:3px solid rgba(216,164,55,.65);cursor:pointer;animation:floatBalloon linear forwards}.balloon:after{content:"";position:absolute;bottom:-26px;width:2px;height:28px;background:#8d7a51}.balloon.pop{animation:none;transform:scale(1.35);opacity:0;transition:.3s}@keyframes floatBalloon{from{bottom:-110px;transform:translateX(0)}to{bottom:430px;transform:translateX(18px)}}.choice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}.choice-card{border:0;border-radius:22px;min-height:90px;background:#fff;font-size:34px;font-weight:900;box-shadow:0 8px 20px rgba(0,0,0,.08);cursor:pointer}.choice-card:hover{transform:translateY(-2px)}.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.memory-card{height:90px;border:0;border-radius:18px;background:linear-gradient(145deg,var(--teal2),var(--teal));color:#fff;font-size:30px;font-weight:900;cursor:pointer;box-shadow:0 8px 18px rgba(0,0,0,.1)}.memory-card.revealed,.memory-card.matched{background:#fff;color:var(--teal);outline:3px solid #8ed39c}.word-bank,.word-slots{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px}.word-letter,.word-slot{width:68px;height:68px;border-radius:18px;display:grid;place-items:center;font-size:30px;font-weight:900}.word-letter{border:0;background:#fff;box-shadow:0 8px 18px rgba(0,0,0,.08);cursor:pointer}.word-slot{border:3px dashed #c9dede;background:#f9ffff}.game-result{margin-top:12px;font-weight:900;min-height:28px}.game-progress-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.game-progress-card{background:#fff;border-radius:18px;padding:12px;text-align:center}.game-progress-card b{display:block;color:var(--teal);font-size:20px}@media(max-width:700px){.choice-grid,.memory-grid,.game-progress-row{grid-template-columns:repeat(2,1fr)}.balloon-field{height:360px}}
+
+/* شهادة جمعية فرقان المعتمدة */
+.certificate-shell{max-width:1180px;margin:18px auto 0}
+.furqan-cert{position:relative;width:100%;aspect-ratio:1.414/1;background:#f8faf9 url('certificate-template.jpg') center/cover no-repeat;border-radius:12px;overflow:hidden;box-shadow:0 18px 45px rgba(67,20,28,.18);font-family:Tahoma,"Segoe UI",Arial,sans-serif;color:#741020}
+.furqan-cert .cert-overlay{position:absolute;inset:0}
+.furqan-cert .dyn{position:absolute;font-weight:900;color:#741020;text-align:center;line-height:1.35;text-shadow:0 1px 0 rgba(255,255,255,.8)}
+.furqan-cert .center-name{top:45.7%;right:13.5%;width:23%;font-size:clamp(13px,1.55vw,25px)}
+.furqan-cert .child-name{top:45.7%;left:33%;width:34%;font-size:clamp(13px,1.55vw,25px)}
+.furqan-cert .term-name{top:53.1%;left:37.5%;width:25%;font-size:clamp(12px,1.35vw,22px)}
+.furqan-cert .year-name{top:53.1%;left:17%;width:17%;font-size:clamp(12px,1.35vw,22px)}
+.furqan-cert .grade-name{top:60.6%;left:36%;width:28%;font-size:clamp(12px,1.35vw,22px)}
+.furqan-cert .cert-number{top:7.1%;left:22.7%;width:12%;font-size:clamp(8px,.9vw,14px);text-align:right}
+.furqan-cert .cert-date{top:10.4%;left:22.7%;width:12%;font-size:clamp(8px,.9vw,14px);text-align:right}
+.furqan-cert .qr-live{position:absolute;right:5.8%;bottom:5.4%;width:8.2%;aspect-ratio:1;background:#fff;padding:4px}
+.furqan-cert .qr-live img{width:100%;height:100%;display:block;object-fit:contain}
+.furqan-cert .cover-qr{position:absolute;right:5.1%;bottom:4.5%;width:10%;height:14%;background:#f8faf9}
+.cert-note{font-size:13px;color:#68757b;margin-top:8px}
+@media(max-width:700px){.furqan-cert{border-radius:8px}.certificate-shell{overflow:auto}.furqan-cert{min-width:760px}}
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{width:297mm;height:210mm;margin:0!important;padding:0!important}
+  #certificate{display:block!important;margin:0!important}
+  .certificate-shell{width:297mm!important;height:210mm!important;margin:0!important;max-width:none!important}
+  .furqan-cert{width:297mm!important;height:210mm!important;aspect-ratio:auto!important;border-radius:0!important;box-shadow:none!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .certEditor,.no-print,.top,.rights,.star-guide{display:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -165,37 +192,53 @@
 <section id="certificate" class="section">
   <div class="two certEditor no-print">
     <div class="card">
-      <h2>إصدار الشهادة</h2><p class="subtitle">راجعي البيانات ثم اعتمدي الإصدار.</p>
+      <h2>إصدار الشهادة المعتمدة</h2>
+      <p class="subtitle">تُعبّأ البيانات تلقائيًا داخل نموذج شهادة جمعية فرقان.</p>
       <div class="formGrid" style="margin-top:14px">
-        <div class="field"><label>اسم الطفل/ـة</label><input id="certName" value="سارة محمد"></div>
+        <div class="field"><label>اسم الطفل/ـة أو الأسرة</label><input id="certName" value="سارة محمد"></div>
         <div class="field"><label>اسم المركز</label><input id="certCenter" value="مركز زينب بنت العوام"></div>
+        <div class="field"><label>الفصل الدراسي</label><select id="certTerm"><option>الفصل الدراسي الأول</option><option>الفصل الدراسي الثاني</option><option>الفصل الدراسي الثالث</option><option>البرنامج الصيفي</option></select></div>
+        <div class="field"><label>العام الدراسي</label><input id="certYear" value="1448هـ"></div>
+        <div class="field"><label>التقدير</label><select id="certGrade"><option>ممتاز</option><option>جيد جدًا</option><option>جيد</option></select></div>
         <div class="field"><label>اسم المعلمة</label><input id="certTeacher" value="المعلمة نورة"></div>
-        <div class="field"><label>المستوى</label><select id="certLevel"><option>المستوى الذهبي</option><option>المستوى الفضي</option><option>المستوى البرونزي</option></select></div>
         <div class="field"><label>تاريخ الإصدار</label><input id="certDate" type="date"></div>
         <div class="field"><label>رقم الشهادة</label><input id="certId" readonly></div>
       </div>
-      <label class="approval" style="margin-top:14px"><input id="certApproved" type="checkbox"> تم اعتماد إكمال متطلبات البرنامج من المعلمة</label>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><button class="btn primary" onclick="issueCertificate()">إصدار الشهادة</button><button class="btn" onclick="window.print()">طباعة / حفظ PDF</button></div>
+      <label class="approval" style="margin-top:14px"><input id="certApproved" type="checkbox"> تم اعتماد اجتياز متطلبات برنامج اقرأ وتعلّم</label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+        <button class="btn primary" onclick="issueCertificate()">إصدار الشهادة</button>
+        <button class="btn" onclick="window.print()">طباعة / حفظ PDF</button>
+      </div>
       <p id="certStatus" class="muted" style="margin-top:10px">لن تُصدر الشهادة قبل اعتماد المعلمة.</p>
     </div>
-    <div class="card"><h3>شروط الاستحقاق</h3><div class="list" style="margin-top:12px"><div class="item"><span>إتمام سورة العلق</span><span class="badge">مكتمل</span></div><div class="item"><span>إتقان الحروف المستهدفة</span><span class="badge">مكتمل</span></div><div class="item"><span>تسليم التسجيلات المطلوبة</span><span class="badge">مكتمل</span></div><div class="item"><span>اعتماد المعلمة</span><span class="badge" id="approvalBadge">بانتظار الاعتماد</span></div></div></div>
+    <div class="card">
+      <h3>شروط الاستحقاق</h3>
+      <div class="list" style="margin-top:12px">
+        <div class="item"><span>إتمام سورة العلق</span><span class="badge">مكتمل</span></div>
+        <div class="item"><span>إتقان الحروف المستهدفة</span><span class="badge">مكتمل</span></div>
+        <div class="item"><span>إكمال الألعاب التعليمية</span><span class="badge">مكتمل</span></div>
+        <div class="item"><span>اعتماد المعلمة</span><span class="badge" id="approvalBadge">بانتظار الاعتماد</span></div>
+      </div>
+      <p class="cert-note">تظهر الشهادة بحجم A4 أفقي عند الطباعة أو الحفظ بصيغة PDF.</p>
+    </div>
   </div>
-  <div class="cert" id="certificatePaper" style="margin-top:16px">
-    <img src="icon.svg" class="cert-logo" alt="شعار اقرأ وتعلّم">
-    <p style="font-weight:800;color:#49636b">جمعية فرقان لتحفيظ القرآن بالطائف</p>
-    <h2>شهادة شكر وتقدير</h2>
-    <p style="font-size:20px;margin-top:12px">تُمنح للطفل/ـة</p>
-    <h3 id="outName" style="font-size:34px;margin:12px 0;color:#233">سارة محمد</h3>
-    <p style="font-size:18px;line-height:1.9">لإتمامه/ـا متطلبات برنامج <b>اقرأ وتعلّم</b> بنجاح، سائلين الله أن يبارك في علمه/ـا وعمله/ـا.</p>
-    <div class="achievements"><span class="achievement">حافظ سورة العلق</span><span class="achievement">نجم الحروف</span><span class="achievement">قارئ مجتهد</span></div>
-    <p id="outLevel" style="font-weight:900;color:var(--gold);font-size:20px">المستوى الذهبي</p>
-    <div class="two" style="margin-top:24px"><p>المعلمة<br><b id="outTeacher">المعلمة نورة</b></p><p>المركز<br><b id="outCenter">مركز زينب بنت العوام</b></p></div>
-    <div class="qrbox"><img id="certQr" alt="رمز التحقق من الشهادة"></div>
-    <div class="cert-meta"><span>رقم الشهادة: <b id="outId">—</b></span><span>تاريخ الإصدار: <b id="outDate">—</b></span></div>
+
+  <div class="certificate-shell" id="certificatePaper">
+    <div class="furqan-cert" aria-label="شهادة جمعية فرقان">
+      <div class="cert-overlay">
+        <span class="dyn cert-number" id="outId">—</span>
+        <span class="dyn cert-date" id="outDate">—</span>
+        <span class="dyn center-name" id="outCenter">مركز زينب بنت العوام</span>
+        <span class="dyn child-name" id="outName">سارة محمد</span>
+        <span class="dyn term-name" id="outTerm">الفصل الدراسي الأول</span>
+        <span class="dyn year-name" id="outYear">1448هـ</span>
+        <span class="dyn grade-name" id="outGrade">ممتاز</span>
+        <div class="cover-qr" aria-hidden="true"></div>
+        <div class="qr-live"><img id="certQr" alt="رمز التحقق من الشهادة"></div>
+      </div>
+    </div>
   </div>
 </section>
-
-<section id="teacher" class="section"><div class="card"><h2>لوحة المعلمة</h2><p class="subtitle">متابعة الأطفال والتسميع والحضور والمهارات اليومية.</p><div class="stats" style="margin-top:14px"><div class="stat"><b>18</b><p>إجمالي الأطفال</p></div><div class="stat"><b id="teacherRec">1</b><p>تسجيل جديد</p></div><div class="stat"><b>76%</b><p>متوسط الإنجاز</p></div><div class="stat"><b>15</b><p>حضور اليوم</p></div></div><div class="two" style="margin-top:16px"><div><h3>التسميعات الواردة</h3><div class="list" id="teacherList" style="margin-top:12px"></div></div><div><h3>المهام السريعة</h3><div class="list" style="margin-top:12px"><div class="item"><span>إضافة طفل جديد</span><button class="btn" onclick="alert('سيُفعّل الربط عند إضافة قاعدة البيانات')">إضافة</button></div><div class="item"><span>تسجيل الحضور</span><button class="btn" onclick="alert('تم فتح سجل الحضور التجريبي')">فتح</button></div><div class="item"><span>تقييم الحروف</span><span class="badge">14 مكتمل</span></div><div class="item"><span>إرسال ملاحظة لولي الأمر</span><button class="btn gold" onclick="alert('تم فتح نموذج الملاحظة')">إرسال</button></div></div></div></div></div></section>
 <section id="parent" class="section"><div class="card"><h2>لوحة ولي الأمر</h2><p class="subtitle">متابعة مستوى الطفل والإنجازات والتوصيات المنزلية.</p><div class="stats" style="margin-top:14px"><div class="stat"><b>81%</b><p>نسبة التقدم</p></div><div class="stat"><b>14</b><p>حرفًا متقنًا</p></div><div class="stat"><b>3</b><p>أوسمة</p></div><div class="stat"><b>5</b><p>تسجيلات معتمدة</p></div></div><div class="two" style="margin-top:16px"><div><h3>آخر الإنجازات</h3><div class="list" style="margin-top:12px"><div class="item"><span>إتقان الآيات 1–5</span><span class="badge">مكتمل</span></div><div class="item"><span>وسام نجم الحروف</span><span class="badge">جديد</span></div><div class="item"><span>آخر تسجيل صوتي</span><span class="badge">معتمد</span></div></div></div><div><h3>توصية المعلمة</h3><div class="item" style="margin-top:12px"><span>مراجعة الآيات 4–5، والتدرب على حرفي «ث» و«خ» لمدة عشر دقائق.</span></div><button class="btn gold" onclick="showTab('certificate')" style="margin-top:12px">عرض الشهادة</button></div></div></div></section>
 <section id="supervisor" class="section"><div class="card"><h2>لوحة المشرفة</h2><p class="subtitle">متابعة أداء الفصول والمعلمات ومراجعة عينات القراءة.</p><div class="stats" style="margin-top:14px"><div class="stat"><b>90%</b><p>نسبة الحضور</p></div><div class="stat"><b>71%</b><p>إتمام السورة</p></div><div class="stat"><b>84%</b><p>إتقان الحروف</p></div><div class="stat"><b>12</b><p>تسجيلات اليوم</p></div></div><div class="two" style="margin-top:16px"><div><h3>أداء الفصول</h3><div class="list" style="margin-top:12px"><div class="item"><span>روضة أ</span><span class="badge">92%</span></div><div class="item"><span>روضة ب</span><span class="badge">78%</span></div><div class="item"><span>التمهيدي</span><span class="badge">69%</span></div></div></div><div><h3>المتابعة الإشرافية</h3><div class="list" style="margin-top:12px"><div class="item"><span>قراءات بانتظار المراجعة</span><span class="badge">6</span></div><div class="item"><span>معلمات أكملن التحديث اليومي</span><span class="badge">3 من 4</span></div><div class="item"><span>فصل يحتاج دعمًا</span><span class="badge">التمهيدي</span></div><div class="item"><span>تقرير الأداء الأسبوعي</span><button class="btn" onclick="alert('سيتم إنشاء التقرير بعد ربط البيانات')">عرض</button></div></div></div></div></div></section>
 <section id="manager" class="section"><div class="card"><h2>لوحة المديرة الذهبية</h2><p class="subtitle">إحصاءات مباشرة ومؤشرات لاتخاذ القرار.</p><div class="stats" style="margin-top:14px"><div class="stat"><b>45</b><p>إجمالي الأطفال</p></div><div class="stat"><b>4</b><p>المعلمات</p></div><div class="stat"><b>128</b><p>إجمالي التسجيلات</p></div><div class="stat"><b>81%</b><p>نسبة الإنجاز العامة</p></div></div><div class="two" style="margin-top:16px"><div><h3>المؤشرات المباشرة</h3><div class="list" style="margin-top:12px"><div class="item"><span>أكثر طفل تميزًا</span><span class="badge">سارة</span></div><div class="item"><span>أكثر فصل نشاطًا</span><span class="badge">روضة أ</span></div><div class="item"><span>أكثر معلمة تفاعلًا</span><span class="badge">المعلمة نورة</span></div><div class="item"><span>شهادات مستحقة</span><span class="badge">36</span></div><div class="item"><span>شهادات تم إصدارها</span><span class="badge" id="issuedCount">12</span></div></div></div><div><h3>تنبيهات الإدارة</h3><div class="list" style="margin-top:12px"><div class="item"><span>لم يسجلوا منذ يومين</span><span class="badge">3 أطفال</span></div><div class="item"><span>تسجيلات لم تُراجع</span><span class="badge">6</span></div><div class="item"><span>متوسط رضا أولياء الأمور</span><span class="badge">88%</span></div><div class="item"><span>التقرير التنفيذي</span><button class="btn gold" onclick="alert('سيُفعّل التقرير التنفيذي بعد ربط Firebase')">عرض</button></div></div></div></div></div></section>
@@ -399,11 +442,30 @@ function openGift(){let gifts=['وسام القارئ المجتهد 🏅','نج
 let mediaRecorder,chunks=[],sec=0,int; startRec.onclick=async()=>{try{let stream=await navigator.mediaDevices.getUserMedia({audio:true}); mediaRecorder=new MediaRecorder(stream); chunks=[]; mediaRecorder.ondataavailable=e=>chunks.push(e.data); mediaRecorder.onstop=()=>{let blob=new Blob(chunks,{type:'audio/webm'}); playback.src=URL.createObjectURL(blob); playback.style.display='block'; sendRec.disabled=false; stream.getTracks().forEach(t=>t.stop())}; mediaRecorder.start(); startRec.disabled=true; stopRec.disabled=false; recState.textContent='جاري التسجيل'; sec=0; int=setInterval(()=>{sec++; timer.textContent='00:'+String(sec).padStart(2,'0'); meter.style.width=(sec%10)*10+'%'},1000)}catch(e){alert('لم يسمح المتصفح باستخدام الميكروفون')}}; stopRec.onclick=()=>{mediaRecorder?.stop();clearInterval(int);startRec.disabled=false;stopRec.disabled=true;recState.textContent='تم التسجيل'}; sendRec.onclick=()=>{recState.textContent='تم الإرسال للمعلمة';teacherRec.textContent=Number(teacherRec.textContent)+1;setProgress(76,3,'تم إرسال تسجيلك للمعلمة. أحسنت!');alert('تم إرسال التسجيل للمعلمة بنجاح')};
 teacherList.innerHTML=['سارة','عبدالله','مريم','يوسف'].map((n,i)=>`<div class="item"><span>${n}<br><small class="muted">آيات اليوم والتسجيلات</small></span><span><button class="btn" onclick="alert('تشغيل تسجيل ${n} التجريبي')">استماع</button> <button class="btn gold" onclick="alert('تم اعتماد تسميع ${n}')">اعتماد</button></span></div>`).join('');
 
-function makeCertId(){const d=new Date();return 'IQRA-'+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+'-'+Math.random().toString(36).slice(2,8).toUpperCase()}
+function makeCertId(){const d=new Date();return 'FRQ-IQRA-'+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+'-'+Math.random().toString(36).slice(2,8).toUpperCase()}
 function setDefaultCertDate(){const el=document.getElementById('certDate');if(el&&!el.value)el.value=new Date().toISOString().slice(0,10);const id=document.getElementById('certId');if(id&&!id.value)id.value=makeCertId()}
-function issueCertificate(){setDefaultCertDate();if(!certApproved.checked){certStatus.textContent='يرجى اعتماد إكمال المتطلبات أولًا.';certStatus.style.color='#b33';return}outName.textContent=certName.value.trim()||'اسم الطفل/ـة';outCenter.textContent=certCenter.value.trim()||'اسم المركز';outTeacher.textContent=certTeacher.value.trim()||'اسم المعلمة';outLevel.textContent=certLevel.value;outId.textContent=certId.value;outDate.textContent=certDate.value;approvalBadge.textContent='تم الاعتماد';certStatus.textContent='تم إصدار الشهادة بنجاح، ويمكن طباعتها أو حفظها PDF.';certStatus.style.color='var(--green)';const verify='https://iqra-wataallam.local/verify?id='+encodeURIComponent(certId.value);certQr.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(verify);localStorage.setItem('iqraCertificate',JSON.stringify({name:certName.value,center:certCenter.value,teacher:certTeacher.value,level:certLevel.value,date:certDate.value,id:certId.value}));const c=document.getElementById('issuedCount');if(c)c.textContent=Number(c.textContent)+1;setProgress(100,5,'مبارك! اكتملت رحلتك وأصبحت شهادتك جاهزة.')}
+function formatArabicDate(v){if(!v)return '—';try{return new Intl.DateTimeFormat('ar-SA-u-ca-gregory',{year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(v+'T00:00:00'))}catch(e){return v}}
+function issueCertificate(){
+  setDefaultCertDate();
+  if(!certApproved.checked){certStatus.textContent='يرجى اعتماد إكمال المتطلبات أولًا.';certStatus.style.color='#b33';return}
+  outName.textContent=certName.value.trim()||'اسم الطفل/ـة';
+  outCenter.textContent=certCenter.value.trim()||'اسم المركز';
+  outTerm.textContent=certTerm.value;
+  outYear.textContent=certYear.value.trim()||'1448هـ';
+  outGrade.textContent=certGrade.value;
+  outId.textContent=certId.value;
+  outDate.textContent=formatArabicDate(certDate.value);
+  approvalBadge.textContent='تم الاعتماد';
+  certStatus.textContent='تم إصدار الشهادة المعتمدة، ويمكن طباعتها أو حفظها PDF.';
+  certStatus.style.color='var(--green)';
+  const verify=location.origin+location.pathname+'?certificate='+encodeURIComponent(certId.value);
+  certQr.src='https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=0&data='+encodeURIComponent(verify);
+  localStorage.setItem('iqraCertificate',JSON.stringify({name:certName.value,center:certCenter.value,teacher:certTeacher.value,term:certTerm.value,year:certYear.value,grade:certGrade.value,date:certDate.value,id:certId.value}));
+  const c=document.getElementById('issuedCount');if(c)c.textContent=Number(c.textContent)+1;
+  setProgress(100,5,'مبارك! اكتملت رحلتك وأصبحت شهادتك جاهزة.');
+}
 certApproved?.addEventListener('change',()=>approvalBadge.textContent=certApproved.checked?'جاهز للإصدار':'بانتظار الاعتماد');setDefaultCertDate();
-const saved=localStorage.getItem('iqraCertificate');if(saved){try{const x=JSON.parse(saved);certName.value=x.name||'';certCenter.value=x.center||'';certTeacher.value=x.teacher||'';certLevel.value=x.level||'المستوى الذهبي';certDate.value=x.date||'';certId.value=x.id||makeCertId()}catch(e){}}
+const saved=localStorage.getItem('iqraCertificate');if(saved){try{const x=JSON.parse(saved);certName.value=x.name||'';certCenter.value=x.center||'';certTeacher.value=x.teacher||'';certTerm.value=x.term||'الفصل الدراسي الأول';certYear.value=x.year||'1448هـ';certGrade.value=x.grade||'ممتاز';certDate.value=x.date||'';certId.value=x.id||makeCertId()}catch(e){}}
 
 if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').then(r=>r.update()).catch(()=>{})}
 

@@ -1,6 +1,6 @@
-const CACHE_NAME = 'iqra-taallam-rc1-2';
+const CACHE_NAME = 'iqra-taallam-rc2-certificate';
 const CORE = [
-  './', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png',
+  './', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png', './certificate-template.jpg',
   ...Array.from({length: 28}, (_, i) => `./${String(i + 1).padStart(2, '0')}.mp3`)
 ];
 self.addEventListener('install', event => {
