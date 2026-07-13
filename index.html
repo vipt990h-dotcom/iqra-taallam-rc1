@@ -479,4 +479,48 @@ if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').the
 document.getElementById('restartModal')?.addEventListener('click',e=>{if(e.target.id==='restartModal')closeRestartModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRestartModal()});
 </script>
+  <script type="module">
+  import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "ضعي apiKey هنا",
+    authDomain: "iqra-wataallam-enterise.firebaseapp.com",
+    projectId: "iqra-wataallam-enterise",
+    storageBucket: "iqra-wataallam-enterise.firebasestorage.app",
+    messagingSenderId: "1617202123",
+    appId: "ضعي appId هنا"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  window.iqraFirebase = { db };
+
+  async function testFirebaseConnection() {
+    try {
+      const testDocument = await addDoc(
+        collection(db, "connection_tests"),
+        {
+          platform: "اقرأ وتعلّم",
+          status: "connected",
+          createdAt: serverTimestamp()
+        }
+      );
+
+      console.log("Firebase connected:", testDocument.id);
+    } catch (error) {
+      console.error("Firebase connection failed:", error);
+    }
+  }
+
+  testFirebaseConnection();
+</script>
 </body></html>
