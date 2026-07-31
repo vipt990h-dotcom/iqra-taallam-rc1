@@ -1,6 +1,6 @@
-const CACHE_NAME = 'iqra-v1.3-final-husary-v5';
+const CACHE_NAME = 'iqra-v1.3-final-certificate-v4';
 const CORE = [
-  './', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png', './certificate-template.jpg', './certificate-qr.png', './assets/audio/surah-alaq-husary.mp3',
+  './', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png', './certificate-template.jpg', './certificate-qr.png',
   ...Array.from({length: 28}, (_, i) => `./${String(i + 1).padStart(2, '0')}.mp3`)
 ];
 self.addEventListener('install', event => {
