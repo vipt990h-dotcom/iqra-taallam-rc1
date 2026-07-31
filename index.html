@@ -319,7 +319,7 @@ const letterData=[
 ['ا','ألف'],['ب','باء'],['ت','تاء'],['ث','ثاء'],['ج','جيم'],['ح','حاء'],['خ','خاء'],['د','دال'],['ذ','ذال'],['ر','راء'],['ز','زاي'],['س','سين'],['ش','شين'],['ص','صاد'],['ض','ضاد'],['ط','طاء'],['ظ','ظاء'],['ع','عين'],['غ','غين'],['ف','فاء'],['ق','قاف'],['ك','كاف'],['ل','لام'],['م','ميم'],['ن','نون'],['هـ','هاء'],['و','واو'],['ي','ياء']];
 const letters=letterData.map(x=>x[0]);let selectedLetterIndex=0;
 const letterStages=[[0,5],[5,10],[10,15],[15,20],[20,28]];
-const letterAudioFiles=letterData.map((_,i)=>`${String(i+1).padStart(2,'0')}.mp3?v=rc1-2`);
+const letterAudioFiles=letterData.map((_,i)=>`${String(i+1).padStart(2,'0')}.mp3?v=rc1-3`);
 let currentStage=0;
 let masteredLetters=new Set(JSON.parse(localStorage.getItem('iqraMasteredLetters')||'[]'));
 function getLetterName(ch){return (letterData.find(x=>x[0]===ch)||[ch,ch])[1]}
@@ -446,6 +446,45 @@ function clearWordSlots(){wordPicked=[];[...wordSlots.children].forEach(x=>x.tex
 renderGameStats();newSoundRound();newMemoryGame();newWordGame();
 
 function openGift(){let gifts=['وسام القارئ المجتهد 🏅','نجمتان إضافيتان ⭐⭐','وسام إتقان الحروف 🔤','كأس بطل اليوم 🏆'];giftText.textContent=gifts[Math.floor(Math.random()*gifts.length)];giftModal.classList.add('show');encourage('مبارك! حصلت على مكافأة جديدة.');setProgress(74,3,'رائع! تقدمت خطوة جديدة نحو الشهادة.')} function closeGift(){giftModal.classList.remove('show')}
+
+const husaryTracks = [
+  'https://everyayah.com/data/Husary_64kbps/096001.mp3',
+  'https://everyayah.com/data/Husary_64kbps/096002.mp3'
+];
+let husaryIndex = 0;
+const husaryAudio = document.getElementById('husaryAudio');
+const reciterStateEl = document.getElementById('reciterState');
+
+function playHusary(){
+  husaryIndex = 0;
+  husaryAudio.src = husaryTracks[husaryIndex];
+  if(reciterStateEl) reciterStateEl.textContent = 'جاري تشغيل الآية الأولى بصوت الشيخ الحصري';
+  husaryAudio.play().catch((error)=>{
+    console.error('Husary audio failed:', error);
+    if(reciterStateEl) reciterStateEl.textContent = 'تعذر التشغيل؛ تحقق من اتصال الإنترنت ثم أعد المحاولة';
+  });
+}
+
+function pauseHusary(){
+  husaryAudio.pause();
+  if(reciterStateEl) reciterStateEl.textContent = 'تم إيقاف التلاوة مؤقتًا';
+}
+
+husaryAudio.addEventListener('ended',()=>{
+  husaryIndex++;
+  if(husaryIndex < husaryTracks.length){
+    husaryAudio.src = husaryTracks[husaryIndex];
+    if(reciterStateEl) reciterStateEl.textContent = 'جاري تشغيل الآية الثانية بصوت الشيخ الحصري';
+    husaryAudio.play().catch((error)=>{
+      console.error('Husary next ayah failed:', error);
+      if(reciterStateEl) reciterStateEl.textContent = 'تعذر تشغيل الآية التالية؛ تحقق من اتصال الإنترنت';
+    });
+  }else{
+    husaryIndex = 0;
+    if(reciterStateEl) reciterStateEl.textContent = 'اكتمل الاستماع للآيتين بصوت الشيخ الحصري';
+  }
+});
+
 let mediaRecorder,chunks=[],sec=0,int; startRec.onclick=async()=>{try{let stream=await navigator.mediaDevices.getUserMedia({audio:true}); mediaRecorder=new MediaRecorder(stream); chunks=[]; mediaRecorder.ondataavailable=e=>chunks.push(e.data); mediaRecorder.onstop=()=>{let blob=new Blob(chunks,{type:'audio/webm'}); playback.src=URL.createObjectURL(blob); playback.style.display='block'; sendRec.disabled=false; stream.getTracks().forEach(t=>t.stop())}; mediaRecorder.start(); startRec.disabled=true; stopRec.disabled=false; recState.textContent='جاري التسجيل'; sec=0; int=setInterval(()=>{sec++; timer.textContent='00:'+String(sec).padStart(2,'0'); meter.style.width=(sec%10)*10+'%'},1000)}catch(e){alert('لم يسمح المتصفح باستخدام الميكروفون')}}; stopRec.onclick=()=>{mediaRecorder?.stop();clearInterval(int);startRec.disabled=false;stopRec.disabled=true;recState.textContent='تم التسجيل'}; sendRec.onclick=()=>{recState.textContent='تم الإرسال للمعلمة';teacherRec.textContent=Number(teacherRec.textContent)+1;setProgress(76,3,'تم إرسال تسجيلك للمعلمة. أحسنت!');alert('تم إرسال التسجيل للمعلمة بنجاح')};
 teacherList.innerHTML=['سارة','عبدالله','مريم','يوسف'].map((n,i)=>`<div class="item"><span>${n}<br><small class="muted">آيات اليوم والتسجيلات</small></span><span><button class="btn" onclick="alert('تشغيل تسجيل ${n} التجريبي')">استماع</button> <button class="btn gold" onclick="alert('تم اعتماد تسميع ${n}')">اعتماد</button></span></div>`).join('');
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'iqra-v1.3-final-certificate-v4';
+const CACHE_NAME = 'iqra-v1.3-audio-map-husary-v5';
 const CORE = [
   './', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png', './certificate-template.jpg', './certificate-qr.png',
   ...Array.from({length: 28}, (_, i) => `./${String(i + 1).padStart(2, '0')}.mp3`)
